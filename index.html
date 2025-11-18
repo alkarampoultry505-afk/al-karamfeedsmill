@@ -1,35 +1,29 @@
-
-
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AL KARAM Feeds - Khairpur Poultry Feed Mill | Premium Quality</title>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
     
     <style>
         /* --------------------- */
-        /* CSS (Styles) for Mobile-First Design (Final Digital Version) */
+        /* CSS (Styles) for Mobile-First Design (Updated for Times New Roman & Contrast) */
         /* --------------------- */
 
         :root {
             /* Company Colors */
-            --primary-color: #03487A; /* Deep Blue (Trust/Professionalism) */
-            --secondary-color: #F7C000; /* Yellow/Gold (Energy/Quality) */
-            --red-cta: #D62828; /* Red for Call To Action (Urgency) */
+            --primary-color: #013A6B; /* Darker Deep Blue for better contrast */
+            --secondary-color: #F7C000; /* Yellow/Gold */
+            --red-cta: #CC2525; /* Slightly darker Red for better contrast */
             --whatsapp-green: #25D366; 
-            --background-color: #f0f4f7; /* Lighter, clean background */
-            --text-color: #333;
+            --background-color: #f8f8f8; /* Clean white-grey background */
+            --text-color: #222; /* Darker text for readability */
             --white-color: #ffffff;
             --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.1); 
             --shadow-heavy: 0 10px 20px rgba(0, 0, 0, 0.2); 
-            --testimonial-bg: #e6eff7; /* Light blue for testimonial section */
+            --testimonial-bg: #E6F3FF; /* Light blue/white background for testimonial */
         }
 
         /* Global & Performance */
@@ -39,16 +33,16 @@
             padding: 0;
         }
         html {
-            scroll-behavior: smooth; /* 3. Smooth Scrolling Added */
+            scroll-behavior: smooth;
         }
         body {
-            font-family: 'Montserrat', sans-serif; 
+            /* Applied Times New Roman */
+            font-family: 'Times New Roman', Times, serif; 
             background-color: var(--background-color);
             color: var(--text-color);
             line-height: 1.6;
             overflow-x: hidden;
         }
-        /* 4. Text Selection Color (Styling Detail) */
         ::selection {
             background-color: var(--secondary-color);
             color: var(--primary-color);
@@ -77,7 +71,7 @@
             height: auto;
         }
         
-        /* CTA Buttons (Pill-shaped, High Contrast) */
+        /* CTA Buttons */
         .cta-bar {
             background-color: var(--primary-color); 
             padding: 15px 0;
@@ -88,11 +82,11 @@
         }
         .cta-button {
             font-size: 1.05rem; 
-            font-weight: 800;
+            font-weight: 700; /* Slightly lighter weight for Times New Roman look */
             padding: 12px 18px; 
             border-radius: 50px; 
             text-decoration: none;
-            transition: all 0.3s ease; /* Smooth transition */
+            transition: all 0.3s ease;
             margin: 5px;
             width: 45%; 
             min-width: 150px;
@@ -118,36 +112,33 @@
             margin-right: 5px; 
         }
 
-        /* Hero Section */
+        /* Hero Section (Contrast Improved) */
         #hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://i.ibb.co/PGvtHVWZ/3.jpg') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.ibb.co/PGvtHVWZ/3.jpg') no-repeat center center/cover; /* Darker overlay for contrast */
             color: var(--white-color);
-            padding: 80px 15px; /* Increased Vertical Padding */
+            padding: 80px 15px;
             min-height: 350px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
         }
-        /* 5. Gradient Heading for H1 (Premium Look) */
-        .gradient-h1 {
-            background: linear-gradient(45deg, var(--secondary-color), var(--white-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 2.2rem; 
+        h1 {
+            color: var(--white-color) !important; /* Pure White for Max Contrast */
+            font-size: 2.5rem; /* Slightly larger */
             margin-bottom: 15px;
             font-weight: 900; 
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+            text-shadow: 0 0 8px rgba(0, 0, 0, 1.0); /* Darker shadow */
         }
         #hero p {
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
+            font-size: 1.2rem; /* Larger hero text */
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9); 
         }
         
         /* Section Styling */
         section {
-            padding: 60px 0; /* Increased Padding */
+            padding: 60px 0;
             border-bottom: 1px solid #ddd;
         }
         section h2 {
@@ -157,17 +148,16 @@
             border-bottom: 5px solid var(--secondary-color);
             display: inline-block;
             padding-bottom: 8px;
-            font-weight: 800;
+            font-weight: 700; /* Times New Roman look */
         }
         
-        /* Feature Lists (Icon Based) */
+        /* Feature Lists */
         .feature-list li {
-            /* ... (existing styles, make sure it has the ::before icon CSS) ... */
             background-color: var(--white-color);
             padding: 12px;
             margin-bottom: 10px;
             border-radius: 8px;
-            font-size: 1rem;
+            font-size: 1.05rem; /* Slightly larger text */
             box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
             position: relative;
             padding-left: 35px;
@@ -176,14 +166,14 @@
             content: "\f00c"; 
             font-family: 'Font Awesome 6 Free'; 
             font-weight: 900;
-            color: var(--primary-color); 
+            color: var(--red-cta); /* Changed to red for better visibility */
             position: absolute;
             left: 12px;
             top: 50%;
             transform: translateY(-50%);
         }
         .product-card .feature-list li::before {
-            color: var(--red-cta); 
+            color: var(--primary-color); /* Product list icons blue */
         }
 
         /* Products Section */
@@ -199,21 +189,14 @@
             transform: translateY(-7px); 
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
         }
-        .product-image {
-            max-width: 170px; 
-            height: auto;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            border: 2px solid var(--secondary-color);
-        }
         .product-card h3 {
             color: var(--red-cta);
             font-size: 1.6rem; 
             margin-bottom: 10px;
-            font-weight: 800;
+            font-weight: 700;
         }
         
-        /* 6. Testimonials Section Styling */
+        /* Testimonials Section Styling */
         #testimonials {
             background-color: var(--testimonial-bg);
             border-top: 5px solid var(--primary-color);
@@ -226,18 +209,18 @@
             margin-bottom: 20px;
             font-style: italic;
             position: relative;
-            border-left: 5px solid var(--secondary-color);
+            border-left: 5px solid var(--red-cta); /* Red border for emphasis */
+            font-size: 1.1rem; /* Larger text for comments */
         }
         .testimonial-card blockquote {
             margin: 0;
-            font-size: 1.05rem;
         }
         .testimonial-card footer {
             margin-top: 10px;
             font-style: normal;
             font-weight: 700;
             color: var(--primary-color);
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
         .testimonial-card i.fa-quote-left {
             color: var(--secondary-color);
@@ -250,7 +233,6 @@
 
         /* Contact Section */
         .contact-info li {
-            /* ... (existing styles) ... */
             padding: 18px; 
             margin-bottom: 15px;
             border-radius: 8px;
@@ -267,35 +249,34 @@
             background-color: var(--primary-color);
             color: var(--white-color);
             padding: 30px 0;
-            font-size: 0.9rem;
-        }
-        .trust-badges {
-            margin: 15px 0;
+            font-size: 0.95rem;
         }
         .trust-badges img {
             max-height: 40px;
             margin: 0 10px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
         }
-        .designer-info {
-            /* ... (existing styles) ... */
+        .trust-badges img:hover {
+            opacity: 1.0;
         }
 
-        /* 7. Media Query for Desktop/Tablet Layout (Digital Grid) */
+        /* Media Query for Desktop/Tablet Layout (Digital Grid) */
         @media (min-width: 768px) {
             .container {
-                max-width: 1100px; /* Wider container */
+                max-width: 1100px;
             }
             
             .products-grid {
                 display: grid;
-                grid-template-columns: repeat(3, 1fr); /* 3 cards side-by-side */
+                grid-template-columns: repeat(3, 1fr);
                 gap: 40px; 
             }
             #hero {
-                min-height: 400px;
+                min-height: 450px;
             }
-            .gradient-h1 {
-                font-size: 3rem;
+            h1 {
+                font-size: 3.5rem !important;
             }
             .testimonial-grid {
                 display: grid;
@@ -322,22 +303,22 @@
 
     <section id="hero">
         <div class="text-center">
-            <h1 class="gradient-h1">Welcome to Al Karam Khairpur Feeds</h1>
+            <h1>Welcome to Al Karam Khairpur Feeds</h1>
             <p>Premium Quality Poultry Feeds Designed for **Faster Growth, Better Health & Maximum Farm Profitability.**</p>
-            <p style="margin-top:15px; font-weight:900; color:var(--secondary-color); font-size: 1.4rem;">"Feed That Grows Your Farm"</p>
+            <p style="margin-top:15px; font-weight:700; color:var(--secondary-color); font-size: 1.4rem;">"Feed That Grows Your Farm"</p>
         </div>
     </section>
     
     <section id="about">
         <div class="container">
             <h2 class="text-center">About Us</h2>
-            <p class="text-center" style="font-weight: bold; margin-bottom: 15px; color: var(--primary-color);">About Al Karam Khairpur Feeds</p>
+            <p class="text-center" style="font-weight: 700; margin-bottom: 15px; color: var(--primary-color);">About Al Karam Khairpur Feeds</p>
             <p class="text-center">
                 **Al Karam Feeds** is a trusted poultry nutrition brand delivering high-quality, research-based poultry feeds across Pakistan.
                 Our feeds are manufactured under strict hygiene and standard quality checks to ensure maximum growth, high FCR, and healthier birds.
             </p>
 
-            <h3 class="text-center" style="margin-top: 30px; font-size: 1.4rem; color: var(--red-cta); font-weight: 800;">What Makes Us Different?</h3>
+            <h3 class="text-center" style="margin-top: 30px; font-size: 1.4rem; color: var(--red-cta); font-weight: 700;">What Makes Us Different?</h3>
             <ul class="feature-list">
                 <li>Scientifically formulated nutrient balance</li>
                 <li>High digestibility and fast weight gain</li>
@@ -365,7 +346,7 @@
                         <li>Best FCR performance in the final 10–15 days</li>
                         <li>Complete vitamins & minerals for strong immunity</li>
                     </ul>
-                    <a href="#contact" class="btn-detail cta-call"><i class="fa-solid fa-truck-fast"></i> Inquire Now</a>
+                    <a href="#contact" class="cta-button cta-call" style="font-size: 1rem;"><i class="fa-solid fa-truck-fast"></i> Inquire Now</a>
                 </div>
 
                 <div class="product-card">
@@ -380,7 +361,7 @@
                         <li>Builds strong bones in the first 10 days</li>
                         <li>More growth with less feed consumption</li>
                     </ul>
-                    <a href="#contact" class="btn-detail cta-call"><i class="fa-solid fa-truck-fast"></i> Inquire Now</a>
+                    <a href="#contact" class="cta-button cta-call" style="font-size: 1rem;"><i class="fa-solid fa-truck-fast"></i> Inquire Now</a>
                 </div>
 
                 <div class="product-card">
@@ -395,7 +376,7 @@
                         <li>Strengthens bones and improves FCR</li>
                         <li>Ideal preparation for finishing stage</li>
                     </ul>
-                    <a href="#contact" class="btn-detail cta-call"><i class="fa-solid fa-truck-fast"></i> Inquire Now</a>
+                    <a href="#contact" class="cta-button cta-call" style="font-size: 1rem;"><i class="fa-solid fa-truck-fast"></i> Inquire Now</a>
                 </div>
             </div>
         </div>
@@ -417,14 +398,43 @@
                     <blockquote>"Starter feed ki quality lajawab hai. Chicks pehle din se hi strong aur active rehte hain. Ab mera profit margin better hai."</blockquote>
                     <footer>— Bilal Shah, Farm Owner, Sindh</footer>
                 </div>
+
+                <div class="testimonial-card">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <blockquote>"Hum kafi arsay se different feeds use kar rahe thay, lekin Al Karam ki finisher feed se hamara weight gain record waqai toot gaya. Bohot shukriya."</blockquote>
+                    <footer>— Usman Ali, Poultry Contractor, Lahore</footer>
+                </div>
+
+                <div class="testimonial-card">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <blockquote>"Grower feed mein protein ka balance itna accha hai ki birds ki health aur immunity dono behtar hoti hain. Hum satisfied hain."</blockquote>
+                    <footer>— Mrs. Farida Iqbal, Farm Manager, Faisalabad</footer>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <section id="why-choose">
+        <div class="container">
+            <h2 class="text-center">Why Choose Al Karam Feeds?</h2>
+            <ul class="feature-list" style="border-left: none;">
+                <li>**Premium quality ingredients**</li>
+                <li>Laboratory-tested nutritional balance</li>
+                <li>High farm profitability</li>
+                <li>Consistent growth results</li>
+                <li>Trusted by hundreds of poultry farmers</li>
+            </ul>
+            
+            <p class="text-center" style="font-size: 1.2rem; color: var(--primary-color); margin-top: 25px; font-weight: 700;">
+                "Strong Nutrition, Strong Birds" | "Performance You Can Trust"
+            </p>
         </div>
     </section>
 
     <section id="contact">
         <div class="container">
             <h2 class="text-center">Contact Details</h2>
-            <p class="text-center" style="font-weight: bold; margin-bottom: 20px; color: var(--primary-color);">
+            <p class="text-center" style="font-weight: 700; margin-bottom: 20px; color: var(--primary-color);">
                 Al Karam Khairpur Feeds – Pakistan’s Trusted Poultry Feed Brand
             </p>
             
@@ -433,9 +443,9 @@
                     <strong><i class="fa-solid fa-location-dot"></i> Factory & Head Office Address</strong>
                     📍 Plot No. 11–12, Khairpur Special Economic Zone
                     <br><br>
-                    <a href="https://maps.google.com/?cid=6919861472327700519&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNl" style="color: var(--primary-color); font-weight: 600;"><i class="fa-solid fa-map-location-dot"></i> [View Location on Map]</a>
+                    <a href="https://maps.google.com/?cid=6919861472327700519&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNl" style="color: var(--primary-color); font-weight: 700;"><i class="fa-solid fa-map-location-dot"></i> [View Location on Map]</a>
                     <br>
-                    <a href="https://www.ksez.com.pk/google_map.html" style="color: var(--red-cta); font-weight: 600;"><i class="fa-solid fa-link"></i> [Visit KSEZ Website]</a>
+                    <a href="https://www.ksez.com.pk/google_map.html" style="color: var(--red-cta); font-weight: 700;"><i class="fa-solid fa-link"></i> [Visit KSEZ Website]</a>
                 </li>
                  <li>
                     <strong><i class="fa-solid fa-headset"></i> Head Office Contact (Muhammad Hasnain Shahid)</strong>
@@ -473,4 +483,4 @@
     </a>
 
 </body>
-</html>
+</html> 
