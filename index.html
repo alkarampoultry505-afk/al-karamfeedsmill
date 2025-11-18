@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AL KARAM Feeds - Khairpur Poultry Feed Mill</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* --------------------- */
+        /* CSS (Styles) for Mobile-First Design */
+        /* --------------------- */
+
+        :root {
+            /* Company Colors */
+            --primary-color: #03487A; /* Deep Blue */
+            --secondary-color: #F7C000; /* Yellow/Gold */
+            --red-cta: #D62828; 
+            --whatsapp-green: #25D366; /* WhatsApp Green */
+            --background-color: #f8f8f8;
+            --text-color: #333;
+            --white-color: #ffffff;
+            --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for 3D effect */
+        }
+
+        /* Basic Reset and Stylish Font Setup */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif; /* Stylish new font */
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            direction: ltr; /* Left-to-Right for English */
+            overflow-x: hidden;
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 90%;
+            max-width: 450px; 
+            margin: 0 auto;
+            padding: 15px 0;
+        }
+        .text-center { text-align: center; }
+
+        /* Header and Logo */
+        header {
+            background-color: var(--primary-color);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .logo-image {
+            max-width: 150px; 
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        /* Quick Call to Action (CTA Buttons Container) */
+        .cta-bar {
+            background-color: var(--secondary-color);
+            padding: 10px 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap; 
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--red-cta);
+            color: var(--white-color);
+            font-size: 1.0rem;
+            font-weight: 700;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s; /* Smooth transition added */
+            margin: 5px;
+            width: 45%; 
+            min-width: 150px;
+        }
+        /* Hover Effect Added */
+        .cta-button:hover {
+            background-color: #a51e1e; /* Darker red on hover */
+            transform: translateY(-2px); /* Slight lift */
+        }
+        
+        .whatsapp-button {
+            background-color: var(--whatsapp-green);
+        }
+        /* Hover Effect Added */
+        .whatsapp-button:hover {
+            background-color: #1e9d50; /* Darker green on hover */
+        }
+
+
+        /* Hero Section */
+        #hero {
+            /* Background uses Image 3 (Broiler) */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://i.ibb.co/PGvtHVWZ/3.jpg') no-repeat center center/cover;
+            color: var(--white-color);
+            padding: 60px 15px;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        #hero h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+            font-weight: 800;
+        }
+        #hero p {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 30px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        section h2 {
+            font-size: 1.7rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--secondary-color);
+            display: inline-block;
+            padding-bottom: 5px;
+            font-weight: 700;
+        }
+        
+        /* List Styling for About/Products/Why Choose */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+            text-align: left;
+        }
+        .feature-list li {
+            background-color: var(--white-color);
+            padding: 10px;
+            margin-bottom: 8px;
+            border-left: 4px solid var(--secondary-color); 
+            border-radius: 4px;
+            font-size: 0.95rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .product-card .feature-list li {
+             border-left: 4px solid var(--primary-color);
+        }
+
+        /* Products Section */
+        .product-card {
+            background-color: var(--white-color); 
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-light); 
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        /* Hover Effect Added to Cards */
+        .product-card:hover {
+            transform: translateY(-5px); 
+        }
+        .product-image {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .product-card h3 {
+            color: var(--red-cta);
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        .product-card .btn-detail {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+        /* Hover Effect Added */
+        .product-card .btn-detail:hover {
+            background-color: #e0ac00; 
+        }
+
+        /* Contact Section */
+        .contact-info {
+            list-style: none;
+            padding: 0;
+        }
+        .contact-info li {
+            background-color: var(--white-color);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border-left: 5px solid var(--primary-color);
+            font-size: 1.05rem;
+            text-align: left;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+        }
+        .contact-info li strong {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 3px;
+            font-weight: 600;
+        }
+        .contact-info a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        /* Hover Effect Added */
+        .contact-info a:hover {
+            color: var(--red-cta); 
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+        .designer-info {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.85rem;
+        }
+        .designer-info a:hover {
+            color: var(--red-cta) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="#">
+                <img src="https://i.ibb.co/0yD8JYzv/logo-for-al-karam.jpg" alt="AK Al-Karam Logo" class="logo-image">
+            </a>
+        </div>
+    </header>
+
+    <div class="cta-bar">
+        <a href="tel:03076388887" class="cta-button">📞 Call Now</a>
+        <a href="https://wa.me/923076388887" class="cta-button whatsapp-button">💬 WhatsApp Now</a>
+    </div>
+
+    <section id="hero">
+        <div class="text-center">
+            <h1>Welcome to Al Karam Khairpur Feeds</h1>
+            <p>Premium Quality Poultry Feeds Designed for **Faster Growth, Better Health & Maximum Farm Profitability.**</p>
+            <p style="margin-top:15px; font-weight:bold; color:var(--secondary-color); font-size: 1.2rem;">"Feed That Grows Your Farm"</p>
+        </div>
+    </section>
+    
+    <section id="about">
+        <div class="container">
+            <h2 class="text-center">About Us</h2>
+            <p class="text-center" style="font-weight: bold; margin-bottom: 15px; color: var(--primary-color);">About Al Karam Khairpur Feeds</p>
+            <p class="text-center">
+                **Al Karam Feeds** is a trusted poultry nutrition brand delivering high-quality, research-based poultry feeds across Pakistan.
+                Our feeds are manufactured under strict hygiene and standard quality checks to ensure maximum growth, high FCR, and healthier birds.
+            </p>
+
+            <h3 class="text-center" style="margin-top: 30px; font-size: 1.4rem; color: var(--red-cta);">What Makes Us Different?</h3>
+            <ul class="feature-list">
+                <li>Scientifically formulated nutrient balance</li>
+                <li>High digestibility and fast weight gain</li>
+                <li>Clean, fresh and safe raw material selection</li>
+                <li>Experienced manufacturing and quality control team</li>
+                <li>Premium production with consistency and trust</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="products">
+        <div class="container">
+            <h2 class="text-center">Our Feed Products</h2>
+            
+            <div class="product-card">
+                <img src="https://i.ibb.co/PGvtHVWZ/3.jpg" alt="Broiler Feed Bag" class="product-image">
+                <h3>⭐ Broiler Feed (Finisher Feed)</h3>
+                <p style="font-weight: 600;">High-Energy Broiler Feed – More Weight, Less Feed</p>
+                <h4 style="color:var(--primary-color);">Features & Benefits</h4>
+                <ul class="feature-list">
+                    <li>High-energy formula for fast finishing</li>
+                    <li>Increases weight with less feed</li>
+                    <li>Enhances meat softness and quality</li>
+                    <li>Best FCR performance in the final 10–15 days</li>
+                    <li>Complete vitamins & minerals for strong immunity</li>
+                </ul>
+                <a href="#contact" class="btn-detail">Inquire Now</a>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.ibb.co/39d6KxBZ/2.jpg" alt="Starter Feed Bag" class="product-image">
+                <h3>⭐ Starter Feed (For Day-Old Chicks)</h3>
+                <p style="font-weight: 600;">Premium Starter Feed – Strong Chicks, Strong Future</p>
+                <h4 style="color:var(--primary-color);">Features & Benefits</h4>
+                <ul class="feature-list">
+                    <li>Fine and soft texture for easy chick intake</li>
+                    <li>High protein formula for rapid early growth</li>
+                    <li>Immunity booster for disease protection</li>
+                    <li>Builds strong bones in the first 10 days</li>
+                    <li>More growth with less feed consumption</li>
+                </ul>
+                <a href="#contact" class="btn-detail">Inquire Now</a>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.ibb.co/7J2zsFDv/1.jpg" alt="Grower Feed Bag" class="product-image">
+                <h3>⭐ Grower Feed (For Mid-Age Broilers)</h3>
+                <p style="font-weight: 600;">Grower Feed for Healthy Growth & Better Performance</p>
+                <h4 style="color:var(--primary-color);">Features & Benefits</h4>
+                <ul class="feature-list">
+                    <li>Balanced protein and energy for steady development</li>
+                    <li>Healthy weight gain without excess fat</li>
+                    <li>Improves digestion and nutrient absorption</li>
+                    <li>Strengthens bones and improves FCR</li>
+                    <li>Ideal preparation for finishing stage</li>
+                </ul>
+                <a href="#contact" class="btn-detail">Inquire Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-choose">
+        <div class="container">
+            <h2 class="text-center">Why Choose Al Karam Feeds?</h2>
+            <ul class="feature-list" style="border-left: none;">
+                <li>**Premium quality ingredients**</li>
+                <li>Laboratory-tested nutritional balance</li>
+                <li>High farm profitability</li>
+                <li>Consistent growth results</li>
+                <li>Trusted by hundreds of poultry farmers</li>
+            </ul>
+            
+            <p class="text-center" style="font-size: 1.2rem; color: var(--primary-color); margin-top: 25px; font-weight: bold;">
+                "Strong Nutrition, Strong Birds" | "Performance You Can Trust"
+            </p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="text-center">Contact Details</h2>
+            <p class="text-center" style="font-weight: bold; margin-bottom: 20px; color: var(--primary-color);">
+                Al Karam Khairpur Feeds – Pakistan’s Trusted Poultry Feed Brand
+            </p>
+            
+            <ul class="contact-info">
+                <li>
+                    <strong>Factory & Head Office Address</strong>
+                    📍 Plot No. 11–12, Khairpur Special Economic Zone
+                    <br><br>
+                    <a href="https://maps.google.com/?cid=6919861472327700519&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNl" style="color: var(--primary-color); font-weight: 600;">[View Location on Map]</a>
+                    <br>
+                    <a href="https://www.ksez.com.pk/google_map.html" style="color: var(--red-cta); font-weight: 600;">[Visit KSEZ Website for More Information]</a>
+                </li>
+                 <li>
+                    <strong>Head Office Contact (Muhammad Hasnain Shahid)</strong>
+                    📞 <a href="tel:03076388887">0307-6388887</a> 
+                </li>
+                <li>
+                    <strong>Directors' Contacts</strong>
+                    Shahid Ikram Malik: <a href="tel:03008377120">0300-8377120</a><br>
+                    Abdul Hafeez Brohi: <a href="tel:03003254547">0300-3254547</a>
+                </li>
+                <li>
+                    <strong>Email Address</strong>
+                    📧 <a href="mailto:ALKARAMPOULTRY505@GMAIL.COM">ALKARAMPOULTRY505@GMAIL.COM</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <p>© 2025 AK Al-Karam Poultry Feeds Mill. All Rights Reserved.</p>
+            <div class="designer-info">
+                Designed By: Hassan Jatoi | WhatsApp: <a href="https://wa.me/923083500829" style="color: var(--secondary-color); text-decoration: none;">0308-3500829</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
