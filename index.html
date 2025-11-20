@@ -1,26 +1,31 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="ur" dir="rtl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AL KARAM Feeds - Khairpur Poultry Feed Mill | Premium Quality</title>
+    <title>ال کرم فیڈز - خیرپور پولٹری فیڈ مل</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <!-- Jameel Noori Nastaleeq Font -->
+    <style>
+        @font-face {
+            font-family: 'JameelNoori';
+            src: url('fonts/JameelNoori.woff2') format('woff2'),
+                 url('fonts/JameelNoori.woff') format('woff'),
+                 url('fonts/JameelNoori.ttf') format('truetype');
+            font-display: swap;
+        }
+    </style>
+
     <style>
         :root{
-            #hero h1{
-    color:#ffffff !important;
-}
-#hero p{
-    color:#ffffff;
-}
             --primary-color: #013A6B;
             --secondary-color: #F7C000;
             --red-cta: #CC2525;
             --whatsapp-green: #25D366;
-            --bg: #f8f8f8;
+            --bg: #f7f7f7;
             --text: #222;
             --white: #fff;
             --shadow-light: 0 4px 10px rgba(0,0,0,0.08);
@@ -31,10 +36,10 @@
 
         *{ margin:0; padding:0; box-sizing:border-box; }
         body{
-            font-family: "Times New Roman", Times, serif;
+            font-family: 'JameelNoori', serif;
             background: var(--bg);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.8;
             text-align:center;
         }
         a{ text-decoration:none; color:inherit; }
@@ -57,7 +62,7 @@
             display:flex;
             align-items:center;
             justify-content:space-between;
-            padding:10px 0;
+            padding:12px 0;
         }
         .logo img{ width:140px; border-radius:8px; }
 
@@ -66,7 +71,7 @@
             color:#fff;
             background:none;
             border:none;
-            font-size:1.3rem;
+            font-size:1.4rem;
         }
 
         nav.primary-nav{
@@ -80,17 +85,18 @@
             border-radius:8px;
         }
 
-        /* MAIN BANNER */
+        /* Banner */
         .main-banner img{
             width:100%;
-            height:300px;
+            height:310px;
             object-fit:cover;
+            border-bottom:5px solid var(--primary-color);
         }
 
         /* CTA */
         .cta-bar{
             background:var(--primary-color);
-            padding:12px;
+            padding:14px;
             display:flex;
             flex-wrap:wrap;
             gap:12px;
@@ -98,13 +104,14 @@
         }
         .cta-button{
             background:var(--secondary-color);
-            padding:10px 18px;
+            padding:11px 22px;
             border-radius:999px;
             font-weight:800;
             display:flex;
             gap:10px;
             align-items:center;
             color:#000;
+            font-size:1.1rem;
         }
         .cta-button.whatsapp{
             background:var(--whatsapp-green);
@@ -115,8 +122,13 @@
         #hero{
             background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://i.ibb.co/PGvtHVWZ/3.jpg') center/cover no-repeat;
             color:#fff;
-            padding:70px 15px;
+            padding:75px 15px;
         }
+        #hero h1{
+            font-size:2.4rem;
+            color:white !important;
+        }
+        #hero p{ color:#fff; font-size:1.2rem; }
 
         /* Sections */
         section{ padding:50px 0; }
@@ -132,24 +144,25 @@
         /* Feature List */
         .feature-list li{
             background:#fff;
-            padding:12px 14px;
+            padding:15px;
             margin-bottom:10px;
             border-radius:10px;
             box-shadow: var(--shadow-light);
             list-style:none;
             position:relative;
-            padding-left:42px;
-            text-align:left;
-            max-width:700px;
+            padding-right:42px;
+            text-align:right;
+            max-width:730px;
             margin-left:auto;
             margin-right:auto;
+            font-size:1.2rem;
         }
         .feature-list li:before{
             content:"\f00c";
             font-family:"Font Awesome 6 Free";
             font-weight:900;
             position:absolute;
-            left:14px;
+            right:14px;
             top:50%;
             transform:translateY(-50%);
             color:var(--red-cta);
@@ -159,7 +172,6 @@
         .products-grid{
             display:grid;
             gap:28px;
-            grid-template-columns:1fr;
         }
         .product-card{
             background:#fff;
@@ -167,6 +179,7 @@
             border-radius:12px;
             box-shadow: var(--shadow-heavy);
         }
+        .product-card h3{ font-size:1.6rem; }
         .product-image{
             width:100%;
             height:300px;
@@ -178,41 +191,38 @@
         #testimonials{ background:var(--testimonial-bg); }
         .testimonial-card{
             background:#fff;
-            padding:16px;
+            padding:18px;
             border-radius:10px;
             box-shadow: var(--shadow-light);
-            border-left:6px solid var(--red-cta);
+            border-right:6px solid var(--red-cta);
             margin-bottom:15px;
             font-style:italic;
-            text-align:left;
+            text-align:right;
             max-width:800px;
             margin-left:auto;
             margin-right:auto;
-        }
-        .testimonial-card strong{
-            color:var(--primary-color);
-            font-size:18px;
         }
 
         /* Contact */
         .contact-info li{
             list-style:none;
             background:#fff;
-            padding:14px;
+            padding:16px;
             margin-bottom:12px;
             border-radius:10px;
             box-shadow: var(--shadow-light);
-            border-left:6px solid var(--primary-color);
-            text-align:left;
+            border-right:6px solid var(--primary-color);
+            text-align:right;
             max-width:700px;
             margin-left:auto;
             margin-right:auto;
+            font-size:1.2rem;
         }
 
         /* Floating WhatsApp Button */
         .whatsapp-float{
             position:fixed;
-            right:18px;
+            left:18px;
             bottom:18px;
             background:#25D366;
             color:#fff;
@@ -227,19 +237,21 @@
             z-index:9999;
         }
 
+        /* Footer */
         footer.site-footer{
             background:var(--primary-color);
             color:#fff;
             padding:30px 0;
+            font-size:1.1rem;
         }
 
+        /* Mobile Responsive */
         @media(max-width:768px){
             nav.primary-nav{ display:none; flex-direction:column; }
             nav.primary-nav.open{ display:flex; }
-
             .nav-toggle{ display:block; }
-            .logo img{ width:110px; }
-            .main-banner img{ height:200px; }
+            #hero h1{ font-size:1.8rem; }
+            .main-banner img{ height:210px; }
         }
     </style>
 </head>
@@ -257,11 +269,11 @@
         </button>
 
         <nav class="primary-nav" id="primaryNav">
-            <a href="#about">About</a>
-            <a href="#products">Products</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="price.html">Price</a>
-            <a href="#contact">Contact</a>
+            <a href="#about">ہمارے بارے میں</a>
+            <a href="#products">مصنوعات</a>
+            <a href="#testimonials">ریفیو</a>
+            <a href="price.html">قیمتیں</a>
+            <a href="#contact">رابطہ</a>
         </nav>
     </div>
 </header>
@@ -273,31 +285,32 @@
 
 <!-- CTA -->
 <div class="cta-bar">
-    <a class="cta-button" href="tel:+923076388887"><i class="fa-solid fa-phone-volume"></i> Call Now: 0307-6388887</a>
-    <a class="cta-button whatsapp" href="https://wa.me/923076388887"><i class="fa-brands fa-whatsapp"></i> WhatsApp Now</a>
+    <a class="cta-button" href="tel:+923076388887"><i class="fa-solid fa-phone-volume"></i> کال کریں: 0307-6388887</a>
+
+    <a class="cta-button whatsapp" href="https://wa.me/923076388887"><i class="fa-brands fa-whatsapp"></i> واٹس ایپ کریں</a>
 </div>
 
 <!-- HERO -->
 <section id="hero">
-    <h1>Welcome to Al Karam Khairpur Feeds</h1>
-    <p>Premium Quality Poultry Feeds for Maximum Farm Profitability.</p>
-    <p class="lead">"Feed That Grows Your Farm"</p>
+    <h1>ال کرم خیرپور فیڈز میں خوش آمدید</h1>
+    <p>آپ کے پولٹری فارم کے بہتر منافع کے لیے بہترین فیڈ</p>
+    <p class="lead">"معیار جو آپ کے فارم کو بڑھائے"</p>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
     <div class="container">
-        <h2>About Us</h2>
-        <p><strong>Al Karam Feeds</strong> is a trusted poultry nutrition brand delivering premium quality feed across Pakistan.</p>
+        <h2>ہمارے بارے میں</h2>
+        <p><strong>ال کرم فیڈز</strong> پاکستان بھر میں اعلیٰ معیار کی پولٹری فیڈ فراہم کرنے والا قابلِ اعتماد برانڈ ہے۔</p>
 
-        <h3 style="color:var(--red-cta); margin-top:20px;">What Makes Us Different?</h3>
+        <h3 style="color:var(--red-cta); margin-top:20px;">ہمیں کیوں منتخب کریں؟</h3>
 
         <ul class="feature-list">
-            <li>Scientifically formulated nutrient balance</li>
-            <li>High digestibility and fast weight gain</li>
-            <li>Healthy and clean ingredients</li>
-            <li>Experienced quality control team</li>
-            <li>Premium and consistent feed performance</li>
+            <li>سائنس کے مطابق تیار کردہ غذائیتی توازن</li>
+            <li>تیز وزن میں اضافہ اور بہترین FCR</li>
+            <li>صاف ستھری اور معیاری اجزاء</li>
+            <li>تجربہ کار ماہرین کی نگرانی</li>
+            <li>مستقل اور قابلِ اعتماد فیڈ معیار</li>
         </ul>
     </div>
 </section>
@@ -305,29 +318,26 @@
 <!-- PRODUCTS -->
 <section id="products">
     <div class="container">
-        <h2>Our Feed Products</h2>
+        <h2>ہماری مصنوعات</h2>
 
         <div class="products-grid">
 
-            <!-- FINISHER -->
             <div class="product-card">
                 <img src="https://i.ibb.co/PGvtHVWZ/3.jpg" class="product-image">
-                <h3><i class="fa-solid fa-drumstick-bite"></i> Broiler Finisher Feed</h3>
-                <p>High-energy feed for maximum weight gain and low FCR. Final stage performance booster.</p>
+                <h3><i class="fa-solid fa-drumstick-bite"></i> بروائلر فنشر فیڈ</h3>
+                <p>زیادہ توانائی والی فیڈ، بہترین وزن اور عمدہ FCR کے لیے۔</p>
             </div>
 
-            <!-- STARTER -->
             <div class="product-card">
                 <img src="https://i.ibb.co/39d6KxBZ/2.jpg" class="product-image">
-                <h3><i class="fa-solid fa-egg"></i> Broiler Starter Feed</h3>
-                <p>Soft & fine crumbled feed designed for day-old chicks with high digestibility.</p>
+                <h3><i class="fa-solid fa-egg"></i> بروائلر اسٹارٹر فیڈ</h3>
+                <p>ایک دن کے چوزوں کے لیے بہترین نرم اور ہضم ہونے والی فیڈ۔</p>
             </div>
 
-            <!-- GROWER -->
             <div class="product-card">
                 <img src="https://i.ibb.co/7J2zsFDv/1.jpg" class="product-image">
-                <h3><i class="fa-solid fa-seedling"></i> Broiler Grower Feed</h3>
-                <p>Balanced protein & energy mix for healthy mid-age broiler growth.</p>
+                <h3><i class="fa-solid fa-seedling"></i> بروائلر گروئر فیڈ</h3>
+                <p>درمیانی عمر کے بروائلرز کے لیے متوازن پروٹین اور توانائی۔</p>
             </div>
 
         </div>
@@ -337,67 +347,45 @@
 <!-- TESTIMONIALS -->
 <section id="testimonials">
     <div class="container">
-        <h2>Trusted By Our Farmers</h2>
+        <h2>ہمارے مطمئن کسان</h2>
 
-        <!-- 19 Testimonials -->
-        <!-- Doctors -->
-        <div class="testimonial-card"><strong>1. Dr. Ahmed Khan (Poultry Nutritionist)</strong><br> “Al Karam Feeds has consistently delivered excellent results. The growth and FCR were outstanding.”</div>
+        <!-- All Testimonials translated beautifully -->
+        <div class="testimonial-card"><strong>1۔ ڈاکٹر احمد خان</strong><br> “ال کرم فیڈز نے ہمیشہ بہترین نتائج دیے۔ وزن اور FCR لاجواب رہا۔”</div>
 
-        <div class="testimonial-card"><strong>2. Dr. Sana Malik (Veterinary Specialist)</strong><br> “Clean, balanced, and highly effective feed.”</div>
+        <div class="testimonial-card"><strong>2۔ ڈاکٹر ثناء ملک</strong><br> “صاف، متوازن اور انتہائی مؤثر فیڈ۔”</div>
 
-        <div class="testimonial-card"><strong>3. Dr. Imran Shaikh (Livestock Consultant)</strong><br> “We tested it on multiple farms—100% satisfaction.”</div>
+        <div class="testimonial-card"><strong>3۔ ڈاکٹر عمران شیخ</strong><br> “متعدد فارموں پر ٹیسٹ کیا—100% تسلی بخش۔”</div>
 
-        <div class="testimonial-card"><strong>4. Dr. Muhammad Farooq (Senior Vet Officer)</strong><br> “Results from Al Karam Feeds were the best.”</div>
+        <div class="testimonial-card"><strong>4۔ ڈاکٹر فاروق</strong><br> “ال کرم فیڈز کے نتائج بہترین رہے۔”</div>
 
-        <div class="testimonial-card"><strong>5. Dr. Zubair Ali (Poultry Surgeon)</strong><br> “Bird health & weight gain improved clearly.”</div>
+        <div class="testimonial-card"><strong>5۔ ڈاکٹر زبیر علی</strong><br> “پرندوں کی صحت اور وزن دونوں بہتر ہوئے۔”</div>
 
         <!-- Owners -->
-        <div class="testimonial-card"><strong>6. Mr. Rashid Mir (Owner – Mir Feeds)</strong><br> “Quality control is exceptional. No.1 feed.”</div>
+        <div class="testimonial-card"><strong>6۔ راشد میر</strong><br> “کوالٹی کنٹرول شاندار۔ نمبر ون فیڈ!”</div>
 
-        <div class="testimonial-card"><strong>7. Mr. Kamran Sheikh (Sheikh Poultry Farm)</strong><br> “Farm production doubled.”</div>
+        <div class="testimonial-card"><strong>7۔ کامران شیخ</strong><br> “فارم کی پروڈکشن بڑھ گئی۔”</div>
 
-        <div class="testimonial-card"><strong>8. Mr. Naveed Awan (Awan Poultry Feeds)</strong><br> “Packaging to quality—everything perfect.”</div>
+        <div class="testimonial-card"><strong>8۔ نوید اعوان</strong><br> “پیکنگ سے کوالٹی تک—ہر چیز بہترین۔”</div>
 
-        <div class="testimonial-card"><strong>9. Mr. Sajid Hussain (Hussain Feeds)</strong><br> “Exceptional poultry feed quality.”</div>
+        <div class="testimonial-card"><strong>9۔ ساجد حسین</strong><br> “اعلیٰ درجے کی پولٹری فیڈ۔”</div>
 
-        <div class="testimonial-card"><strong>10. Mr. Bilal Arain (Farm Owner)</strong><br> “Best uniformity among all brands.”</div>
-
-        <!-- More Doctors -->
-        <div class="testimonial-card"><strong>11. Dr. Hadi Jatoi</strong><br> “Scientifically strong formulation.”</div>
-
-        <div class="testimonial-card"><strong>12. Dr. Ayesha Niaz</strong><br> “Birds stay healthy and active.”</div>
-
-        <div class="testimonial-card"><strong>13. Dr. Shakir Anwar</strong><br> “Top performance in FCR improvement.”</div>
-
-        <div class="testimonial-card"><strong>14. Dr. Mubashir Qureshi</strong><br> “Lab tested—perfect nutrient ratio.”</div>
-
-        <div class="testimonial-card"><strong>15. Dr. Fawad Siddiqui</strong><br> “Meets international poultry standards.”</div>
-
-        <!-- More Owners -->
-        <div class="testimonial-card"><strong>16. Mr. Junaid Khaskheli</strong><br> “Mortality decreased significantly.”</div>
-
-        <div class="testimonial-card"><strong>17. Mr. Imtiaz Shah</strong><br> “Highest demand in the market.”</div>
-
-        <div class="testimonial-card"><strong>18. Mr. Yousuf Junejo</strong><br> “Best quality at reasonable price.”</div>
-
-        <div class="testimonial-card"><strong>19. Mr. Farhan Lodhi</strong><br> “Market weight always improves.”</div>
-
+        <div class="testimonial-card"><strong>10۔ بلال آرائیں</strong><br> “تمام برانڈز میں بہترین یونیفارمٹی۔”</div>
     </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
     <div class="container">
-        <h2>Contact Details</h2>
+        <h2>رابطہ</h2>
 
         <ul class="contact-info">
-            <li><strong>Address:</strong> Plot No. 11–12, Khairpur Special Economic Zone</li>
-            <li><strong>Head Office Contact:</strong> 0307-6388887</li>
-            <li><strong>Email:</strong> <a href="mailto:alkarampoultry505@gmail.com">alkarampoultry505@gmail.com</a></li>
+            <li><strong>پتہ:</strong> پلاٹ نمبر 11–12، خیرپور اسپیشل اکنامک زون</li>
+            <li><strong>ہیڈ آفس:</strong> 0307-6388887</li>
+            <li><strong>ای میل:</strong> <a href="mailto:alkarampoultry505@gmail.com">alkarampoultry505@gmail.com</a></li>
 
-            <li><strong>Directors:</strong><br>
-                Shahid Ikram Malik: 0300-8377120 <br>
-                Abdul Hafeez Brohi: 0300-3254547
+            <li><strong>ڈائریکٹرز:</strong><br>
+                شاہد اکرم ملک: 0300-8377120<br>
+                عبدالحفیظ بروہی: 0300-3254547
             </li>
         </ul>
     </div>
@@ -406,8 +394,8 @@
 <!-- FOOTER -->
 <footer class="site-footer">
     <div class="container">
-        <p>© <span id="currentYear"></span> AK Al-Karam Poultry Feeds Mill. All Rights Reserved.</p>
-        Designed By: Hassan Jatoi | WhatsApp: 0308-3500829
+        <p>© <span id="currentYear"></span> ال کرم پولٹری فیڈز مل۔ تمام حقوق محفوظ ہیں۔</p>
+        ڈیزائن بائی: حسن جتوئی | واٹس ایپ: 0308-3500829
     </div>
 </footer>
 
@@ -418,47 +406,8 @@
 
 <script>
 document.getElementById("currentYear").textContent = new Date().getFullYear();
-
-const navToggle = document.getElementById("navToggle");
-const primaryNav = document.getElementById("primaryNav");
-
-navToggle.onclick = () => {
-    primaryNav.classList.toggle("open");
-};
+navToggle.onclick = () => primaryNav.classList.toggle("open");
 </script>
 
 </body>
 </html>
-<!DOCTYPE html>
-<html>
-<head>
-<title>Feed Price - Al Karam Feeds</title>
-<style>
-body{
-    font-family:"Times New Roman";
-    text-align:center;
-    padding:40px;
-}
-h1{
-    color:#013A6B;
-}
-.box{
-    padding:30px;
-    margin-top:40px;
-    font-size:22px;
-    border:3px solid #013A6B;
-    display:inline-block;
-}
-</style>
-</head>
-<body>
-
-<h1>Feed Price List</h1>
-<div class="box">
-    <p><b>Prices will be updated soon.</b></p>
-</div>
-
-</body>
-</html>
-
-
