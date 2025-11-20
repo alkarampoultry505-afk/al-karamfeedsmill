@@ -1,290 +1,337 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AL KARAM Feeds - Khairpur Poultry Feed Mill | Premium Quality</title>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
-    
-    <style>
 
-        :root {
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-jQ2XhK6Bz2k2qKxQmLkT0b2w0c6Q8u9x1qz5t6sG0nH0bqvWc7m7u7hJk3s1Zqf+5KGpYq6X0tBqU9b7b6Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        :root{
             --primary-color: #013A6B;
             --secondary-color: #F7C000;
             --red-cta: #CC2525;
             --whatsapp-green: #25D366;
-            --background-color: #f8f8f8;
-            --text-color: #222;
-            --white-color: #ffffff;
-            --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.1);
-            --shadow-heavy: 0 10px 20px rgba(0, 0, 0, 0.2);
+            --bg: #f8f8f8;
+            --text: #222;
+            --white: #fff;
+            --shadow-light: 0 4px 10px rgba(0,0,0,0.08);
+            --shadow-heavy: 0 10px 20px rgba(0,0,0,0.12);
             --testimonial-bg: #E6F3FF;
+            --max-width: 1100px;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Times New Roman', Times, serif;
-            background-color: var(--background-color);
-            color: var(--text-color);
+        /* Reset / base */
+        *{ box-sizing: border-box; margin:0; padding:0; }
+        html{ scroll-behavior: smooth; }
+        body{
+            font-family: "Times New Roman", Times, serif;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
+        a{ color: inherit; text-decoration:none; }
 
-        ::selection {
-            background-color: var(--secondary-color);
-            color: var(--primary-color);
+        .container{
+            width:90%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 10px;
         }
+        .text-center{ text-align:center; }
 
-        .container { width: 90%; max-width: 450px; margin: auto; padding: 15px 0; }
-        .text-center { text-align: center; }
-
-        header {
-            background-color: var(--primary-color);
-            padding: 10px 0;
+        /* HEADER + NAV */
+        header.site-header{
             position: sticky;
-            top: 0;
+            top:0;
             z-index: 1000;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-            <!-- TOP HEADER + BANNER WITH LOGO OVERLAY -->
-<header class="main-header">
-    <div class="logo-overlay">
-        <img src="https://i.ibb.co/0yD8JYzv/logo-for-al-karam.jpg" class="logo-image">
-    </div>
-
-    <img src="https://i.ibb.co/TDKCW5sb/al-karam-feed-mill.jpg" class="banner-image" alt="AL-KARAM Feed Mill Banner">
-</header>
-
-<style>
-/* HEADER FULL BANNER */
-.main-header {
-    position: relative;
-    width: 100%;
-    height: 260px; /* Mobile friendly height */
-    overflow: hidden;
-}
-
-/* Banner Image */
-.banner-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Logo Position on Top of Banner */
-.logo-overlay {
-    position: absolute;
-    top: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-}
-
-/* Logo Styling */
-.logo-image {
-    width: 140px;
-    height: auto;
-    border-radius: 10px;
-}
-
-/* Mobile Responsive */
-@media (max-width: 600px) {
-    .main-header {
-        height: 200px;
-    }
-    .logo-image {
-        width: 110px;
-    }
-}
-</style>
-
+            background: var(--primary-color);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.25);
         }
-        .logo-image { max-width: 150px; height: auto; }
+        .header-inner{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding:10px 0;
+        }
+        .logo img{ width:140px; height:auto; border-radius:8px; display:block; }
+        /* Mobile nav button */
+        .nav-toggle{
+            display:none;
+            font-size:1.25rem;
+            color: var(--white);
+            background:transparent;
+            border: none;
+            cursor:pointer;
+        }
+        nav.primary-nav{
+            display:flex;
+            gap:14px;
+            align-items:center;
+        }
+        nav.primary-nav a{
+            padding:8px 12px;
+            color: #fff;
+            font-weight:700;
+            border-radius:8px;
+        }
+        nav.primary-nav a:hover{ background: rgba(255,255,255,0.08); }
 
-        .cta-bar {
-            background-color: var(--primary-color);
-            padding: 15px 0;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
+        /* Banner with logo overlay */
+        .main-banner{
+            position:relative;
+            width:100%;
+            height: 260px;
+            overflow:hidden;
+            background:#222;
+        }
+        .main-banner img.banner{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            display:block;
+        }
+        .main-banner .logo-overlay{
+            position:absolute;
+            top:14px;
+            left:50%;
+            transform:translateX(-50%);
+            z-index:10;
+        }
+        .main-banner .logo-overlay img{ width:140px; border-radius:10px; }
+
+        /* CTA bar */
+        .cta-bar{
+            background:var(--primary-color);
+            display:flex;
+            gap:12px;
+            justify-content:center;
+            flex-wrap:wrap;
+            padding:12px;
             box-shadow: var(--shadow-light);
         }
-        .cta-button {
-            font-size: 1.05rem;
-            font-weight: 700;
-            padding: 12px 18px;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: .3s;
-            margin: 5px;
-            width: 45%;
-            min-width: 150px;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+        .cta-button{
+            display:inline-flex;
+            align-items:center;
+            gap:10px;
+            padding:10px 18px;
+            border-radius:999px;
+            font-weight:800;
+            min-width:170px;
+            justify-content:center;
+            color:var(--primary-color);
+            background:var(--secondary-color);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.12);
         }
-        .cta-call { background-color: var(--secondary-color); color: var(--primary-color); }
-        .cta-call:hover { background-color: #e0ac00; transform: scale(1.05); }
-        .whatsapp-button { background-color: var(--whatsapp-green); color: #fff; }
-        .whatsapp-button:hover { background-color: #1e9d50; transform: scale(1.05); }
+        .cta-button.whatsapp{
+            background:var(--whatsapp-green);
+            color:#fff;
+        }
+        .cta-button:active, .cta-button:focus{ transform:scale(.995); }
 
-        #hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://i.ibb.co/PGvtHVWZ/3.jpg') no-repeat center/cover;
-            color: #fff;
-            padding: 80px 15px;
-            min-height: 350px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+        /* HERO */
+        #hero{
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://i.ibb.co/PGvtHVWZ/3.jpg') center/cover no-repeat;
+            color:#fff;
+            padding:70px 15px;
+            min-height:320px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
         }
-        h1 {
-            color: #fff !important;
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            font-weight: 900;
-            text-shadow: 0 0 8px rgba(0,0,0,1);
+        #hero h1{
+            font-size:2.6rem;
+            margin-bottom:12px;
+            font-weight:900;
+            text-shadow:0 0 8px rgba(0,0,0,0.85);
+        }
+        #hero p.lead{ font-weight:700; color:var(--secondary-color); font-size:1.1rem; margin-top:12px; }
+
+        /* Sections */
+        section{ padding:50px 0; }
+        section h2{
+            font-size:2rem;
+            color:var(--primary-color);
+            margin-bottom:18px;
+            display:inline-block;
+            border-bottom:5px solid var(--secondary-color);
+            padding-bottom:8px;
+            font-weight:700;
         }
 
-        section { padding: 60px 0; border-bottom: 1px solid #ddd; }
-        section h2 {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 30px;
-            border-bottom: 5px solid var(--secondary-color);
-            display: inline-block;
-            padding-bottom: 8px;
-            font-weight: 700;
+        /* Feature list */
+        .feature-list{ list-style:none; margin-top:18px; }
+        .feature-list li{
+            background:#fff;
+            padding:12px 14px;
+            margin-bottom:10px;
+            border-radius:10px;
+            font-size:1.02rem;
+            box-shadow: var(--shadow-light);
+            position:relative;
+            padding-left:42px;
         }
-
-        .feature-list li {
-            background: #fff;
-            padding: 12px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            font-size: 1.05rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: relative;
-            padding-left: 35px;
-        }
-        .feature-list li::before {
+        .feature-list li::before{
             content: "\f00c";
             font-family: "Font Awesome 6 Free";
-            font-weight: 900;
+            font-weight:900;
+            position:absolute;
+            left:14px;
+            top:50%;
+            transform:translateY(-50%);
             color: var(--red-cta);
-            position: absolute;
-            left: 12px;
-            top: 50%;
-            transform: translateY(-50%);
         }
 
-        .product-card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 30px;
+        /* Products grid */
+        .products-grid{ display:grid; gap:28px; grid-template-columns: 1fr; margin-top:20px; }
+        .product-card{
+            background:#fff;
+            border-radius:12px;
+            padding:18px;
             box-shadow: var(--shadow-heavy);
-            transition: .3s;
+            transition: transform .25s ease, box-shadow .25s ease;
         }
-        .product-card:hover { transform: translateY(-7px); }
+        .product-card:hover{ transform: translateY(-8px); }
+        .product-image{ width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:12px; }
 
-        #testimonials { background: var(--testimonial-bg); border-top: 5px solid var(--primary-color); }
-
-        .testimonial-card {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
+        /* Testimonials */
+        #testimonials{ background:var(--testimonial-bg); border-top:5px solid var(--primary-color); }
+        .testimonial-grid{ display:grid; gap:20px; grid-template-columns: 1fr; margin-top:18px; }
+        .testimonial-card{
+            background:#fff;
+            padding:16px;
+            border-radius:10px;
             box-shadow: var(--shadow-light);
-            font-style: italic;
-            border-left: 5px solid var(--red-cta);
-            position: relative;
-            font-size: 1.1rem;
+            font-style:italic;
+            border-left:6px solid var(--red-cta);
+            position:relative;
         }
-        .testimonial-card i.fa-quote-left {
+        .testimonial-card i.fa-quote-left{
             color: var(--secondary-color);
-            font-size: 1.5rem;
-            position: absolute;
-            top: 15px; left: 10px;
+            position:absolute;
+            top:12px; left:12px;
+            font-size:1.2rem;
         }
+        .testimonial-card footer{ margin-top:10px; font-style:normal; font-weight:700; color:var(--primary-color); }
 
-        .contact-info li {
-            padding: 18px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            border-left: 6px solid var(--primary-color);
+        /* Contact list */
+        .contact-info{ list-style:none; margin-top:12px; }
+        .contact-info li{
+            background:#fff;
+            padding:14px;
+            margin-bottom:12px;
+            border-radius:10px;
+            border-left:6px solid var(--primary-color);
             box-shadow: var(--shadow-light);
         }
 
-        footer {
-            background: var(--primary-color);
-            color: #fff;
-            padding: 30px 0;
-            font-size: 0.95rem;
+        /* Footer */
+        footer.site-footer{
+            background:var(--primary-color);
+            color:#fff;
+            padding:30px 0;
+            margin-top:20px;
         }
-        .trust-badges img {
-            max-height: 40px;
-            margin: 0 10px;
-            opacity: 0.8;
-        }
+        .trust-badges img{ max-height:42px; margin:0 8px; opacity:0.95; vertical-align:middle; }
 
-        @media (min-width: 768px) {
-            .container { max-width: 1100px; }
-            .products-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; }
-            .testimonial-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 30px; }
-            h1 { font-size: 3.5rem !important; }
-        }
+        /* Utilities */
+        .muted{ color:#666; }
 
+        /* Responsive */
+        @media(min-width:768px){
+            nav.primary-nav{ display:flex; }
+            .products-grid{ grid-template-columns: repeat(3, 1fr); }
+            .testimonial-grid{ grid-template-columns: repeat(2, 1fr); }
+            #hero{ min-height:380px; padding:80px 15px; }
+            .nav-toggle{ display:none; }
+        }
+        @media(max-width:767px){
+            nav.primary-nav{ 
+                display:none; 
+                position:absolute;
+                right:12px;
+                top:62px;
+                background:var(--primary-color);
+                padding:10px;
+                border-radius:8px;
+                box-shadow: var(--shadow-heavy);
+                flex-direction:column;
+                gap:8px;
+            }
+            nav.primary-nav.open{ display:flex; }
+            .nav-toggle{ display:block; }
+            .logo img{ width:110px; }
+            .main-banner{ height:200px; }
+        }
     </style>
 </head>
-
 <body>
 
-    <header>
-        <div class="container">
-            <a href="#">
-                <img src="https://i.ibb.co/0yD8JYzv/logo-for-al-karam.jpg" class="logo-image">
-            </a>
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="#hero" aria-label="Al Karam Feeds Home">
+                    <img src="https://i.ibb.co/0yD8JYzv/logo-for-al-karam.jpg" alt="Al Karam Feeds Logo">
+                </a>
+            </div>
+
+            <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <nav class="primary-nav" id="primaryNav" aria-label="Primary Navigation">
+                <a href="#about">About</a>
+                <a href="#products">Products</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
     </header>
 
-    <!-- ⭐ NEW IMAGE BELOW TOP HEADER ⭐ -->
-    <div class="top-banner-image" style="text-align:center; padding:10px 0;">
-        <img src="https://i.ibb.co/TDKCW5sb/al-karam-feed-mill.jpg" 
-             alt="al-karam-feed-mill" 
-             style="max-width:100%; border-radius:12px;">
+    <!-- Banner with logo overlay -->
+    <div class="main-banner" role="img" aria-label="Al Karam Feed Mill Banner">
+        <img class="banner" src="https://i.ibb.co/TDKCW5sb/al-karam-feed-mill.jpg" alt="AL Karam Feed Mill">
+        <div class="logo-overlay">
+            <img src="https://i.ibb.co/0yD8JYzv/logo-for-al-karam.jpg" alt="Al Karam Logo">
+        </div>
     </div>
 
-    <div class="cta-bar">
-        <a href="tel:03076388887" class="cta-button cta-call"><i class="fa-solid fa-phone-volume"></i> Call Now</a>
-        <a href="https://wa.me/923076388887" class="cta-button whatsapp-button"><i class="fa-brands fa-whatsapp"></i> WhatsApp Now</a>
+    <!-- CTA Bar -->
+    <div class="cta-bar" role="region" aria-label="Call to Action">
+        <a class="cta-button" href="tel:+923076388887"><i class="fa-solid fa-phone-volume"></i> Call Now: 0307-6388887</a>
+        <a class="cta-button whatsapp" href="https://wa.me/923076388887" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp Now</a>
     </div>
 
-    <section id="hero">
-        <div class="text-center">
-            <h1>Welcome to Al Karam Khairpur Feeds</h1>
+    <!-- HERO -->
+    <section id="hero" aria-labelledby="hero-heading">
+        <div class="container text-center">
+            <h1 id="hero-heading">Welcome to Al Karam Khairpur Feeds</h1>
             <p>Premium Quality Poultry Feeds for Maximum Farm Profitability.</p>
-            <p style="margin-top:15px; font-weight:700; color:var(--secondary-color); font-size:1.4rem;">
-                "Feed That Grows Your Farm"
-            </p>
+            <p class="lead">"Feed That Grows Your Farm"</p>
         </div>
     </section>
 
-    <section id="about">
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="about-heading">
         <div class="container">
-            <h2 class="text-center">About Us</h2>
-            <p class="text-center" style="font-weight:700; margin-bottom:15px; color:var(--primary-color);">
+            <h2 id="about-heading" class="text-center">About Us</h2>
+            <p class="text-center muted" style="font-weight:700; margin-bottom:10px; color:var(--primary-color);">
                 About Al Karam Khairpur Feeds
             </p>
-            <p class="text-center">
-                **Al Karam Feeds** is a trusted poultry nutrition brand delivering premium quality feed across Pakistan.
+            <p class="text-center" style="max-width:820px; margin:0 auto 16px;">
+                <strong>Al Karam Feeds</strong> is a trusted poultry nutrition brand delivering premium quality feed across Pakistan.
             </p>
 
-            <h3 class="text-center" style="margin-top:30px; font-size:1.4rem; color:var(--red-cta); font-weight:700;">
+            <h3 class="text-center" style="margin-top:22px; font-size:1.2rem; color:var(--red-cta);">
                 What Makes Us Different?
             </h3>
 
-            <ul class="feature-list">
+            <ul class="feature-list container" style="max-width:820px;">
                 <li>Scientifically formulated nutrient balance</li>
                 <li>High digestibility and fast weight gain</li>
                 <li>Healthy and clean ingredients</li>
@@ -294,17 +341,17 @@
         </div>
     </section>
 
-    <section id="products">
+    <!-- PRODUCTS -->
+    <section id="products" aria-labelledby="products-heading">
         <div class="container">
-            <h2 class="text-center">Our Feed Products</h2>
+            <h2 id="products-heading" class="text-center">Our Feed Products</h2>
 
             <div class="products-grid">
-
-                <div class="product-card">
-                    <img src="https://i.ibb.co/PGvtHVWZ/3.jpg" class="product-image">
-                    <h3><i class="fa-solid fa-seedling"></i> Broiler Feed (Finisher)</h3>
+                <article class="product-card" aria-labelledby="p1">
+                    <img src="https://i.ibb.co/PGvtHVWZ/3.jpg" alt="Broiler Feed" class="product-image">
+                    <h3 id="p1"><i class="fa-solid fa-seedling"></i> Broiler Feed (Finisher)</h3>
                     <p style="font-weight:600;">High-energy feed for more weight in less time.</p>
-                    <h4 style="color:var(--primary-color);">Features & Benefits</h4>
+                    <h4 style="color:var(--primary-color); margin-top:10px;">Features & Benefits</h4>
                     <ul class="feature-list">
                         <li>High energy for fast finishing</li>
                         <li>More weight with less feed</li>
@@ -312,13 +359,13 @@
                         <li>Best FCR performance</li>
                         <li>Strong immunity support</li>
                     </ul>
-                </div>
+                </article>
 
-                <div class="product-card">
-                    <img src="https://i.ibb.co/39d6KxBZ/2.jpg" class="product-image">
-                    <h3><i class="fa-solid fa-egg"></i> Starter Feed</h3>
+                <article class="product-card" aria-labelledby="p2">
+                    <img src="https://i.ibb.co/39d6KxBZ/2.jpg" alt="Starter Feed" class="product-image">
+                    <h3 id="p2"><i class="fa-solid fa-egg"></i> Starter Feed</h3>
                     <p style="font-weight:600;">Soft & fine feed for day-old chicks.</p>
-                    <h4 style="color:var(--primary-color);">Features & Benefits</h4>
+                    <h4 style="color:var(--primary-color); margin-top:10px;">Features & Benefits</h4>
                     <ul class="feature-list">
                         <li>Soft texture for chicks</li>
                         <li>High protein for early growth</li>
@@ -326,13 +373,13 @@
                         <li>Stronger bones</li>
                         <li>Maximum starter performance</li>
                     </ul>
-                </div>
+                </article>
 
-                <div class="product-card">
-                    <img src="https://i.ibb.co/7J2zsFDv/1.jpg" class="product-image">
-                    <h3><i class="fa-solid fa-drumstick-bite"></i> Grower Feed</h3>
+                <article class="product-card" aria-labelledby="p3">
+                    <img src="https://i.ibb.co/7J2zsFDv/1.jpg" alt="Grower Feed" class="product-image">
+                    <h3 id="p3"><i class="fa-solid fa-drumstick-bite"></i> Grower Feed</h3>
                     <p style="font-weight:600;">Healthy mid-age broiler growth formula.</p>
-                    <h4 style="color:var(--primary-color);">Features & Benefits</h4>
+                    <h4 style="color:var(--primary-color); margin-top:10px;">Features & Benefits</h4>
                     <ul class="feature-list">
                         <li>Balanced protein and energy</li>
                         <li>Healthy weight gain</li>
@@ -340,18 +387,17 @@
                         <li>Improved FCR</li>
                         <li>Perfect for pre-finisher stage</li>
                     </ul>
-                </div>
-
+                </article>
             </div>
         </div>
     </section>
 
-    <section id="testimonials">
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" aria-labelledby="testimonials-heading">
         <div class="container">
-            <h2 class="text-center">Trusted By Our Farmers</h2>
+            <h2 id="testimonials-heading" class="text-center">Trusted By Our Farmers</h2>
 
             <div class="testimonial-grid">
-
                 <div class="testimonial-card">
                     <i class="fa-solid fa-quote-left"></i>
                     <blockquote>
@@ -383,29 +429,29 @@
                     </blockquote>
                     <footer>— Mrs. Farida, Faisalabad</footer>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <section id="why-choose">
+    <!-- WHY CHOOSE -->
+    <section id="why-choose" aria-labelledby="why-heading">
         <div class="container">
-            <h2 class="text-center">Why Choose Al Karam Feeds?</h2>
+            <h2 id="why-heading" class="text-center">Why Choose Al Karam Feeds?</h2>
 
-            <ul class="feature-list">
+            <ul class="feature-list" style="max-width:820px; margin:18px auto 0;">
                 <li>Premium quality ingredients</li>
                 <li>Lab-tested nutrition</li>
                 <li>High profitability</li>
                 <li>Consistent results</li>
                 <li>Trusted nationwide</li>
             </ul>
-
         </div>
     </section>
 
-    <section id="contact">
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-heading">
         <div class="container">
-            <h2 class="text-center">Contact Details</h2>
+            <h2 id="contact-heading" class="text-center">Contact Details</h2>
 
             <ul class="contact-info">
                 <li>
@@ -415,14 +461,12 @@
 
                 <li>
                     <strong><i class="fa-solid fa-headset"></i> Head Office Contact</strong><br>
-                    📞 <a href="tel:03076388887">0307-6388887</a>
+                    📞 <a href="tel:+923076388887">0307-6388887</a>
                 </li>
 
                 <li>
                     <strong><i class="fa-solid fa-envelope"></i> Email</strong><br>
-                    📧 <a href="mailto:ALKARAMPOULTRY505@GMAIL.COM">
-                        ALKARAMPOULTRY505@GMAIL.COM
-                    </a>
+                    📧 <a href="mailto:ALKARAMPOULTRY505@GMAIL.COM">ALKARAMPOULTRY505@GMAIL.COM</a>
                 </li>
 
                 <li>
@@ -430,31 +474,64 @@
                     Shahid Ikram Malik: 0300-8377120 <br>
                     Abdul Hafeez Brohi: 0300-3254547
                 </li>
-
             </ul>
         </div>
     </section>
 
-    <footer>
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
         <div class="container text-center">
-
-            <div class="trust-badges">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/ISO_9001_2015_Logo.png">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/HALAL.svg/1200px-HALAL.svg.png">
+            <div class="trust-badges" style="margin-bottom:12px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/ISO_9001_2015_Logo.png" alt="ISO 9001">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/HALAL.svg/1200px-HALAL.svg.png" alt="HALAL">
             </div>
 
-            <p>© 2025 AK Al-Karam Poultry Feeds Mill. All Rights Reserved.</p>
+            <p>© <span id="currentYear"></span> AK Al-Karam Poultry Feeds Mill. All Rights Reserved.</p>
 
-            <div class="designer-info">
-                Designed By: Hassan Jatoi | WhatsApp: 
-                <a href="https://wa.me/923083500829" style="color:#25D366; font-weight:700;">
-                    0308-3500829
-                </a>
+            <div class="designer-info" style="margin-top:8px;">
+                Designed By: Hassan Jatoi | WhatsApp:
+                <a href="https://wa.me/923083500829" style="color: #25D366; font-weight:700;">0308-3500829</a>
             </div>
-
         </div>
     </footer>
 
+    <!-- Minimal JS: nav toggle + fill year + close nav on link click -->
+    <script>
+        (function(){
+            const navToggle = document.getElementById('navToggle');
+            const primaryNav = document.getElementById('primaryNav');
+            navToggle.addEventListener('click', () => {
+                const open = primaryNav.classList.toggle('open');
+                navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                // change icon
+                navToggle.innerHTML = open ? '<i class=\"fa-solid fa-xmark\"></i>' : '<i class=\"fa-solid fa-bars\"></i>';
+            });
+
+            // Close mobile menu when a nav link is clicked
+            primaryNav.querySelectorAll('a').forEach(a=>{
+                a.addEventListener('click', () => {
+                    if(primaryNav.classList.contains('open')){
+                        primaryNav.classList.remove('open');
+                        navToggle.innerHTML = '<i class=\"fa-solid fa-bars\"></i>';
+                        navToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+
+            // Insert current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // Optional: smooth scroll offset for sticky header
+            // For browsers that support scrollBehavior, the CSS html { scroll-behavior: smooth } already helps.
+            // If you want to offset anchor clicks because of sticky header:
+            function offsetAnchor() {
+                if(location.hash.length > 0) {
+                    window.scrollTo(window.scrollX, window.scrollY - 70);
+                }
+            }
+            window.addEventListener("hashchange", offsetAnchor);
+            window.setTimeout(offsetAnchor, 1);
+        })();
+    </script>
 </body>
 </html>
-
