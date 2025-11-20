@@ -47,6 +47,58 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            <!-- TOP HEADER + BANNER WITH LOGO OVERLAY -->
+<header class="main-header">
+    <div class="logo-overlay">
+        <img src="https://i.ibb.co/0yD8JYzv/logo-for-al-karam.jpg" class="logo-image">
+    </div>
+
+    <img src="https://i.ibb.co/TDKCW5sb/al-karam-feed-mill.jpg" class="banner-image" alt="AL-KARAM Feed Mill Banner">
+</header>
+
+<style>
+/* HEADER FULL BANNER */
+.main-header {
+    position: relative;
+    width: 100%;
+    height: 260px; /* Mobile friendly height */
+    overflow: hidden;
+}
+
+/* Banner Image */
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Logo Position on Top of Banner */
+.logo-overlay {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+/* Logo Styling */
+.logo-image {
+    width: 140px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .main-header {
+        height: 200px;
+    }
+    .logo-image {
+        width: 110px;
+    }
+}
+</style>
+
         }
         .logo-image { max-width: 150px; height: auto; }
 
@@ -405,3 +457,4 @@
 
 </body>
 </html>
+
