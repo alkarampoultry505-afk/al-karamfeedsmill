@@ -1,237 +1,456 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AL KARAM Poultry Feed Mill – Khairpur</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AL KARAM Feeds - Khairpur Poultry Feed Mill | Premium Quality</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        body { margin: 0; font-family: Arial, sans-serif; background: #f5f5f5; }
-
-        header {
-            background: #005c2e;
-            padding: 25px;
-            color: white;
-            text-align: center;
+        :root{
+            --primary-color: #013A6B;
+            --secondary-color: #F7C000;
+            --red-cta: #CC2525;
+            --whatsapp-green: #25D366;
+            --bg: #f8f8f8;
+            --text: #222;
+            --white: #fff;
+            --shadow-light: 0 4px 10px rgba(0,0,0,0.08);
+            --shadow-heavy: 0 10px 20px rgba(0,0,0,0.12);
+            --max-width: 1100px;
+            --testimonial-bg: #E6F3FF;
         }
 
-        nav {
-            background: #00994d;
-            text-align: center;
-            padding: 12px;
+        *{ margin:0; padding:0; box-sizing:border-box; }
+        body{
+            font-family: "Times New Roman", Times, serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            text-align:center;
+        }
+        a{ text-decoration:none; color:inherit; }
+
+        .container{
+            width:90%;
+            max-width: var(--max-width);
+            margin:0 auto;
         }
 
-        nav a {
-            color: white;
-            margin: 0 18px;
-            font-size: 18px;
-            text-decoration: none;
-            font-weight: bold;
+        /* HEADER */
+        header.site-header{
+            background:var(--primary-color);
+            position:sticky;
+            top:0;
+            z-index:1000;
+            box-shadow:0 3px 10px rgba(0,0,0,0.25);
+        }
+        .header-inner{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding:10px 0;
+        }
+        .logo img{ width:140px; border-radius:8px; }
+
+        .nav-toggle{
+            display:none;
+            color:#fff;
+            background:none;
+            border:none;
+            font-size:1.3rem;
         }
 
-        nav a:hover { text-decoration: underline; }
-
-        .top-img img {
-            width: 100%;
-            height: auto;
-            display: block;
+        nav.primary-nav{
+            display:flex;
+            gap:14px;
+        }
+        nav.primary-nav a{
+            color:#fff;
+            padding:8px 12px;
+            font-weight:700;
+            border-radius:8px;
         }
 
-        /* Product intro cards */
-        .product-section {
-            padding: 40px 20px;
-            text-align: center;
+        /* MAIN BANNER */
+        .main-banner img{
+            width:100%;
+            height:300px;
+            object-fit:cover;
         }
 
-        .product-card {
-            background: white;
-            padding: 30px;
-            margin: 20px auto;
-            max-width: 900px;
-            border-radius: 15px;
-            box-shadow: 0 0 12px #cfcfcf;
-            text-align: left;
+        /* CTA */
+        .cta-bar{
+            background:var(--primary-color);
+            padding:12px;
+            display:flex;
+            flex-wrap:wrap;
+            gap:12px;
+            justify-content:center;
+        }
+        .cta-button{
+            background:var(--secondary-color);
+            padding:10px 18px;
+            border-radius:999px;
+            font-weight:800;
+            display:flex;
+            gap:10px;
+            align-items:center;
+            color:#000;
+        }
+        .cta-button.whatsapp{
+            background:var(--whatsapp-green);
+            color:#fff;
         }
 
-        .product-card h2 { color: #005c2e; margin-bottom: 10px; }
-        .product-card p { font-size: 18px; line-height: 1.6; }
+        /* HERO */
+        #hero{
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://i.ibb.co/PGvtHVWZ/3.jpg') center/cover no-repeat;
+            color:#fff;
+            padding:70px 15px;
+        }
 
-        /* Bag images */
-        .bag-img img {
-            width: 100%;
-            display: block;
-            margin: 30px 0;
-            border-radius: 10px;
+        /* Sections */
+        section{ padding:50px 0; }
+        section h2{
+            color:var(--primary-color);
+            font-size:2rem;
+            border-bottom:5px solid var(--secondary-color);
+            display:inline-block;
+            padding-bottom:6px;
+            margin-bottom:20px;
+        }
+
+        /* Feature List */
+        .feature-list li{
+            background:#fff;
+            padding:12px 14px;
+            margin-bottom:10px;
+            border-radius:10px;
+            box-shadow: var(--shadow-light);
+            list-style:none;
+            position:relative;
+            padding-left:42px;
+            text-align:left;
+            max-width:700px;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        .feature-list li:before{
+            content:"\f00c";
+            font-family:"Font Awesome 6 Free";
+            font-weight:900;
+            position:absolute;
+            left:14px;
+            top:50%;
+            transform:translateY(-50%);
+            color:var(--red-cta);
+        }
+
+        /* Products */
+        .products-grid{
+            display:grid;
+            gap:28px;
+            grid-template-columns:1fr;
+        }
+        .product-card{
+            background:#fff;
+            padding:18px;
+            border-radius:12px;
+            box-shadow: var(--shadow-heavy);
+        }
+        .product-image{
+            width:100%;
+            height:300px;
+            object-fit:cover;
+            border-radius:10px;
         }
 
         /* Testimonials */
-        .testimonial-section {
-            padding: 40px 20px;
-            background: #e9f7ee;
+        #testimonials{ background:var(--testimonial-bg); }
+        .testimonial-card{
+            background:#fff;
+            padding:16px;
+            border-radius:10px;
+            box-shadow: var(--shadow-light);
+            border-left:6px solid var(--red-cta);
+            margin-bottom:15px;
+            font-style:italic;
+            text-align:left;
+            max-width:800px;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        .testimonial-card strong{
+            color:var(--primary-color);
+            font-size:18px;
         }
 
-        .testimonial-section h2 {
-            text-align: center;
-            color: #005c2e;
-            margin-bottom: 30px;
+        /* Contact */
+        .contact-info li{
+            list-style:none;
+            background:#fff;
+            padding:14px;
+            margin-bottom:12px;
+            border-radius:10px;
+            box-shadow: var(--shadow-light);
+            border-left:6px solid var(--primary-color);
+            text-align:left;
+            max-width:700px;
+            margin-left:auto;
+            margin-right:auto;
         }
 
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            grid-gap: 20px;
+        /* Floating WhatsApp Button */
+        .whatsapp-float{
+            position:fixed;
+            right:18px;
+            bottom:18px;
+            background:#25D366;
+            color:#fff;
+            width:60px;
+            height:60px;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:32px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.3);
+            z-index:9999;
         }
 
-        .testimonial {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 0 10px #bdbdbd;
+        footer.site-footer{
+            background:var(--primary-color);
+            color:#fff;
+            padding:30px 0;
         }
 
-        .testimonial strong { color: #00994d; }
+        @media(max-width:768px){
+            nav.primary-nav{ display:none; flex-direction:column; }
+            nav.primary-nav.open{ display:flex; }
 
-        /* Footer */
-        footer {
-            background: #004a26;
-            color: white;
-            text-align: center;
-            padding: 18px;
-            margin-top: 40px;
+            .nav-toggle{ display:block; }
+            .logo img{ width:110px; }
+            .main-banner img{ height:200px; }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <h1>AL KARAM POULTRY FEEDS MILL – KHAIRPUR</h1>
-        <p>Premium Quality Poultry Feed | Pure & Fresh Production</p>
-    </header>
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <a href="#hero"><img src="https://i.ibb.co/0yD8JYzv/logo-for-al-karam.jpg"></a>
+        </div>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <a href="#">Home</a>
-        <a href="#products">Products</a>
-        <a href="#bags">Bags</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
-    </nav>
+        <button class="nav-toggle" id="navToggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
 
-    <!-- TOP IMAGE -->
-    <div class="top-img">
-        <img src="https://i.ibb.co/TDKCW5sb/al-karam-feed-mill.jpg" alt="al-karam-feed-mill">
+        <nav class="primary-nav" id="primaryNav">
+            <a href="#about">About</a>
+            <a href="#products">Products</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="price.html">Price</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </div>
+</header>
 
-    <!-- PRODUCT INTRODUCTION -->
-    <section id="products" class="product-section">
+<!-- Banner -->
+<div class="main-banner">
+    <img src="https://i.ibb.co/TDKCW5sb/al-karam-feed-mill.jpg">
+</div>
 
-        <div class="product-card">
-            <h2>🐥 Broiler Starter Feed</h2>
-            <p>
-                Al Karam Starter Feed specially designed for early-age chicks.  
-                It provides high protein, balanced amino acids, energy, calcium, and vitamins  
-                to ensure strong growth, better immunity, and improved weight gain.  
-                Fresh production ensures excellent digestibility and performance.
-            </p>
-        </div>
+<!-- CTA -->
+<div class="cta-bar">
+    <a class="cta-button" href="tel:+923076388887"><i class="fa-solid fa-phone-volume"></i> Call Now: 0307-6388887</a>
+    <a class="cta-button whatsapp" href="https://wa.me/923076388887"><i class="fa-brands fa-whatsapp"></i> WhatsApp Now</a>
+</div>
 
-        <div class="product-card">
-            <h2>🐔 Broiler Grower Feed</h2>
-            <p>
-                Grower feed is formulated for rapid body weight gain, bone strength, and muscle development.  
-                It helps maintain ideal FCR, improves appetite, and boosts overall health.  
-                A perfect feed for mid-phase growth with premium nutritional balance.
-            </p>
-        </div>
+<!-- HERO -->
+<section id="hero">
+    <h1>Welcome to Al Karam Khairpur Feeds</h1>
+    <p>Premium Quality Poultry Feeds for Maximum Farm Profitability.</p>
+    <p class="lead">"Feed That Grows Your Farm"</p>
+</section>
 
-        <div class="product-card">
-            <h2>🍗 Broiler Finisher Feed</h2>
-            <p>
-                Finisher feed delivers maximum energy and nutrition for final growth stage.  
-                It improves dressing percentage, enhances skin quality, and results in  
-                uniform flock performance. Ideal for achieving superior market weight.
-            </p>
-        </div>
+<!-- ABOUT -->
+<section id="about">
+    <div class="container">
+        <h2>About Us</h2>
+        <p><strong>Al Karam Feeds</strong> is a trusted poultry nutrition brand delivering premium quality feed across Pakistan.</p>
 
-    </section>
+        <h3 style="color:var(--red-cta); margin-top:20px;">What Makes Us Different?</h3>
 
-    <!-- BAG IMAGES -->
-    <section id="bags" class="bag-img">
-        <img src="1.jpg" alt="Bag Image 1">
-        <img src="2.jpg" alt="Bag Image 2">
-        <img src="3.jpg" alt="Bag Image 3">
-    </section>
+        <ul class="feature-list">
+            <li>Scientifically formulated nutrient balance</li>
+            <li>High digestibility and fast weight gain</li>
+            <li>Healthy and clean ingredients</li>
+            <li>Experienced quality control team</li>
+            <li>Premium and consistent feed performance</li>
+        </ul>
+    </div>
+</section>
 
-    <!-- TESTIMONIALS -->
-    <section id="testimonials" class="testimonial-section">
-        <h2>Customer Testimonials</h2>
+<!-- PRODUCTS -->
+<section id="products">
+    <div class="container">
+        <h2>Our Feed Products</h2>
 
-        <div class="testimonial-grid">
+        <div class="products-grid">
 
-            <div class="testimonial">
-                <strong>Ahmed Khan</strong><br>
-                "Feed quality bohot zabardast hai. Growth bhi excellent aati hai."
+            <!-- FINISHER -->
+            <div class="product-card">
+                <img src="https://i.ibb.co/PGvtHVWZ/3.jpg" class="product-image">
+                <h3><i class="fa-solid fa-drumstick-bite"></i> Broiler Finisher Feed</h3>
+                <p>High-energy feed for maximum weight gain and low FCR. Final stage performance booster.</p>
             </div>
 
-            <div class="testimonial">
-                <strong>Bilal Shaikh</strong><br>
-                "Market me sabse best fresh feed. FCR bhi bohot acha milta hai."
+            <!-- STARTER -->
+            <div class="product-card">
+                <img src="https://i.ibb.co/39d6KxBZ/2.jpg" class="product-image">
+                <h3><i class="fa-solid fa-egg"></i> Broiler Starter Feed</h3>
+                <p>Soft & fine crumbled feed designed for day-old chicks with high digestibility.</p>
             </div>
 
-            <div class="testimonial">
-                <strong>Raheel Malik</strong><br>
-                "Production fresh milti hai, results 10/10."
-            </div>
-
-            <div class="testimonial">
-                <strong>Zubair Junejo</strong><br>
-                "Mujhe feed bohot pasand ayi, birds ki health perfect rahi."
-            </div>
-
-            <div class="testimonial">
-                <strong>Dr. Faraz</strong><br>
-                "Nutritional balance bohot behtreen, recommend karta hoon."
-            </div>
-
-            <div class="testimonial">
-                <strong>Jamal Khoso</strong><br>
-                "Weight gain excellent raha — full satisfied."
-            </div>
-
-            <div class="testimonial">
-                <strong>Hassan Ali</strong><br>
-                "Price bhi reasonable aur quality premium."
-            </div>
-
-            <div class="testimonial">
-                <strong>Imran Chandio</strong><br>
-                "Digestibility bohot acchi — birds active rehte hain."
-            </div>
-
-            <div class="testimonial">
-                <strong>Naveed Awan</strong><br>
-                "Har batch same standard ka hota hai. Team great work."
-            </div>
-
-            <div class="testimonial">
-                <strong>Dr. Kashif</strong><br>
-                "Technical point of view se feed well balanced hai."
+            <!-- GROWER -->
+            <div class="product-card">
+                <img src="https://i.ibb.co/7J2zsFDv/1.jpg" class="product-image">
+                <h3><i class="fa-solid fa-seedling"></i> Broiler Grower Feed</h3>
+                <p>Balanced protein & energy mix for healthy mid-age broiler growth.</p>
             </div>
 
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer id="contact">
-        © <span id="currentYear"></span> AL KARAM Poultry Feed Mill | All Rights Reserved<br>
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+    <div class="container">
+        <h2>Trusted By Our Farmers</h2>
+
+        <!-- 19 Testimonials -->
+        <!-- Doctors -->
+        <div class="testimonial-card"><strong>1. Dr. Ahmed Khan (Poultry Nutritionist)</strong><br> “Al Karam Feeds has consistently delivered excellent results. The growth and FCR were outstanding.”</div>
+
+        <div class="testimonial-card"><strong>2. Dr. Sana Malik (Veterinary Specialist)</strong><br> “Clean, balanced, and highly effective feed.”</div>
+
+        <div class="testimonial-card"><strong>3. Dr. Imran Shaikh (Livestock Consultant)</strong><br> “We tested it on multiple farms—100% satisfaction.”</div>
+
+        <div class="testimonial-card"><strong>4. Dr. Muhammad Farooq (Senior Vet Officer)</strong><br> “Results from Al Karam Feeds were the best.”</div>
+
+        <div class="testimonial-card"><strong>5. Dr. Zubair Ali (Poultry Surgeon)</strong><br> “Bird health & weight gain improved clearly.”</div>
+
+        <!-- Owners -->
+        <div class="testimonial-card"><strong>6. Mr. Rashid Mir (Owner – Mir Feeds)</strong><br> “Quality control is exceptional. No.1 feed.”</div>
+
+        <div class="testimonial-card"><strong>7. Mr. Kamran Sheikh (Sheikh Poultry Farm)</strong><br> “Farm production doubled.”</div>
+
+        <div class="testimonial-card"><strong>8. Mr. Naveed Awan (Awan Poultry Feeds)</strong><br> “Packaging to quality—everything perfect.”</div>
+
+        <div class="testimonial-card"><strong>9. Mr. Sajid Hussain (Hussain Feeds)</strong><br> “Exceptional poultry feed quality.”</div>
+
+        <div class="testimonial-card"><strong>10. Mr. Bilal Arain (Farm Owner)</strong><br> “Best uniformity among all brands.”</div>
+
+        <!-- More Doctors -->
+        <div class="testimonial-card"><strong>11. Dr. Hadi Jatoi</strong><br> “Scientifically strong formulation.”</div>
+
+        <div class="testimonial-card"><strong>12. Dr. Ayesha Niaz</strong><br> “Birds stay healthy and active.”</div>
+
+        <div class="testimonial-card"><strong>13. Dr. Shakir Anwar</strong><br> “Top performance in FCR improvement.”</div>
+
+        <div class="testimonial-card"><strong>14. Dr. Mubashir Qureshi</strong><br> “Lab tested—perfect nutrient ratio.”</div>
+
+        <div class="testimonial-card"><strong>15. Dr. Fawad Siddiqui</strong><br> “Meets international poultry standards.”</div>
+
+        <!-- More Owners -->
+        <div class="testimonial-card"><strong>16. Mr. Junaid Khaskheli</strong><br> “Mortality decreased significantly.”</div>
+
+        <div class="testimonial-card"><strong>17. Mr. Imtiaz Shah</strong><br> “Highest demand in the market.”</div>
+
+        <div class="testimonial-card"><strong>18. Mr. Yousuf Junejo</strong><br> “Best quality at reasonable price.”</div>
+
+        <div class="testimonial-card"><strong>19. Mr. Farhan Lodhi</strong><br> “Market weight always improves.”</div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="container">
+        <h2>Contact Details</h2>
+
+        <ul class="contact-info">
+            <li><strong>Address:</strong> Plot No. 11–12, Khairpur Special Economic Zone</li>
+            <li><strong>Head Office Contact:</strong> 0307-6388887</li>
+            <li><strong>Email:</strong> <a href="mailto:alkarampoultry505@gmail.com">alkarampoultry505@gmail.com</a></li>
+
+            <li><strong>Directors:</strong><br>
+                Shahid Ikram Malik: 0300-8377120 <br>
+                Abdul Hafeez Brohi: 0300-3254547
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container">
+        <p>© <span id="currentYear"></span> AK Al-Karam Poultry Feeds Mill. All Rights Reserved.</p>
         Designed By: Hassan Jatoi | WhatsApp: 0308-3500829
-    </footer>
+    </div>
+</footer>
 
-    <script>
-        document.getElementById("currentYear").innerText = new Date().getFullYear();
-    </script>
+<!-- FLOAT WhatsApp -->
+<a class="whatsapp-float" href="https://wa.me/923076388887">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+const navToggle = document.getElementById("navToggle");
+const primaryNav = document.getElementById("primaryNav");
+
+navToggle.onclick = () => {
+    primaryNav.classList.toggle("open");
+};
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Feed Price - Al Karam Feeds</title>
+<style>
+body{
+    font-family:"Times New Roman";
+    text-align:center;
+    padding:40px;
+}
+h1{
+    color:#013A6B;
+}
+.box{
+    padding:30px;
+    margin-top:40px;
+    font-size:22px;
+    border:3px solid #013A6B;
+    display:inline-block;
+}
+</style>
+</head>
+<body>
+
+<h1>Feed Price List</h1>
+<div class="box">
+    <p><b>Prices will be updated soon.</b></p>
+</div>
 
 </body>
 </html>
