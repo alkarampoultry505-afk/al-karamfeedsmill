@@ -183,31 +183,6 @@
             h1 { font-size: 3.5rem !important; }
         }
 
-        /* Floating WhatsApp Button Animation */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25D366;
-            color: white;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            text-decoration: none;
-            z-index: 999;
-            animation: pulse 1.6s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
-            70% { transform: scale(1.1); box-shadow: 0 0 10px 20px rgba(37,211,102,0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0); }
-        }
-
     </style>
 </head>
 
@@ -223,4 +198,204 @@
 
     <div class="cta-bar">
         <a href="tel:03076388887" class="cta-button cta-call"><i class="fa-solid fa-phone-volume"></i> Call Now</a>
-        <a href="https://wa.me/923076388887" class="cta-button whatsapp-button"><i
+        <a href="https://wa.me/923076388887" class="cta-button whatsapp-button"><i class="fa-brands fa-whatsapp"></i> WhatsApp Now</a>
+    </div>
+
+    <section id="hero">
+        <div class="text-center">
+            <h1>Welcome to Al Karam Khairpur Feeds</h1>
+            <p>Premium Quality Poultry Feeds for Maximum Farm Profitability.</p>
+            <p style="margin-top:15px; font-weight:700; color:var(--secondary-color); font-size:1.4rem;">
+                "Feed That Grows Your Farm"
+            </p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="text-center">About Us</h2>
+            <p class="text-center" style="font-weight:700; margin-bottom:15px; color:var(--primary-color);">
+                About Al Karam Khairpur Feeds
+            </p>
+            <p class="text-center">
+                **Al Karam Feeds** is a trusted poultry nutrition brand delivering premium quality feed across Pakistan.
+            </p>
+
+            <h3 class="text-center" style="margin-top:30px; font-size:1.4rem; color:var(--red-cta); font-weight:700;">
+                What Makes Us Different?
+            </h3>
+
+            <ul class="feature-list">
+                <li>Scientifically formulated nutrient balance</li>
+                <li>High digestibility and fast weight gain</li>
+                <li>Healthy and clean ingredients</li>
+                <li>Experienced quality control team</li>
+                <li>Premium and consistent feed performance</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="products">
+        <div class="container">
+            <h2 class="text-center">Our Feed Products</h2>
+
+            <div class="products-grid">
+
+                <div class="product-card">
+                    <img src="https://i.ibb.co/PGvtHVWZ/3.jpg" class="product-image">
+                    <h3><i class="fa-solid fa-seedling"></i> Broiler Feed (Finisher)</h3>
+                    <p style="font-weight:600;">High-energy feed for more weight in less time.</p>
+                    <h4 style="color:var(--primary-color);">Features & Benefits</h4>
+                    <ul class="feature-list">
+                        <li>High energy for fast finishing</li>
+                        <li>More weight with less feed</li>
+                        <li>Excellent meat softness</li>
+                        <li>Best FCR performance</li>
+                        <li>Strong immunity support</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://i.ibb.co/39d6KxBZ/2.jpg" class="product-image">
+                    <h3><i class="fa-solid fa-egg"></i> Starter Feed</h3>
+                    <p style="font-weight:600;">Soft & fine feed for day-old chicks.</p>
+                    <h4 style="color:var(--primary-color);">Features & Benefits</h4>
+                    <ul class="feature-list">
+                        <li>Soft texture for chicks</li>
+                        <li>High protein for early growth</li>
+                        <li>Immunity booster</li>
+                        <li>Stronger bones</li>
+                        <li>Maximum starter performance</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://i.ibb.co/7J2zsFDv/1.jpg" class="product-image">
+                    <h3><i class="fa-solid fa-drumstick-bite"></i> Grower Feed</h3>
+                    <p style="font-weight:600;">Healthy mid-age broiler growth formula.</p>
+                    <h4 style="color:var(--primary-color);">Features & Benefits</h4>
+                    <ul class="feature-list">
+                        <li>Balanced protein and energy</li>
+                        <li>Healthy weight gain</li>
+                        <li>Better digestion</li>
+                        <li>Improved FCR</li>
+                        <li>Perfect for pre-finisher stage</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h2 class="text-center">Trusted By Our Farmers</h2>
+
+            <div class="testimonial-grid">
+
+                <div class="testimonial-card">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <blockquote>
+                        "Al Karam Feeds ne meri farm ki growth double kar di. FCR behtar hogaya."
+                    </blockquote>
+                    <footer>— Ahmad Khan, Punjab</footer>
+                </div>
+
+                <div class="testimonial-card">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <blockquote>
+                        "Starter feed ki quality strong hai. Profit margin improve hua."
+                    </blockquote>
+                    <footer>— Bilal Shah, Sindh</footer>
+                </div>
+
+                <div class="testimonial-card">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <blockquote>
+                        "Finisher feed se weight gain record tor diya. Excellent results."
+                    </blockquote>
+                    <footer>— Usman Ali, Lahore</footer>
+                </div>
+
+                <div class="testimonial-card">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <blockquote>
+                        "Grower feed ka protein balance bohot accha hai. Birds healthier hain."
+                    </blockquote>
+                    <footer>— Mrs. Farida, Faisalabad</footer>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="why-choose">
+        <div class="container">
+            <h2 class="text-center">Why Choose Al Karam Feeds?</h2>
+
+            <ul class="feature-list">
+                <li>Premium quality ingredients</li>
+                <li>Lab-tested nutrition</li>
+                <li>High profitability</li>
+                <li>Consistent results</li>
+                <li>Trusted nationwide</li>
+            </ul>
+
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="text-center">Contact Details</h2>
+
+            <ul class="contact-info">
+                <li>
+                    <strong><i class="fa-solid fa-location-dot"></i> Address</strong><br>
+                    Plot No. 11–12, Khairpur Special Economic Zone
+                </li>
+
+                <li>
+                    <strong><i class="fa-solid fa-headset"></i> Head Office Contact</strong><br>
+                    📞 <a href="tel:03076388887">0307-6388887</a>
+                </li>
+
+                <li>
+                    <strong><i class="fa-solid fa-envelope"></i> Email</strong><br>
+                    📧 <a href="mailto:ALKARAMPOULTRY505@GMAIL.COM">
+                        ALKARAMPOULTRY505@GMAIL.COM
+                    </a>
+                </li>
+
+                <li>
+                    <strong><i class="fa-solid fa-user-tie"></i> Directors</strong><br>
+                    Shahid Ikram Malik: 0300-8377120 <br>
+                    Abdul Hafeez Brohi: 0300-3254547
+                </li>
+
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+
+            <div class="trust-badges">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/ISO_9001_2015_Logo.png">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/HALAL.svg/1200px-HALAL.svg.png">
+            </div>
+
+            <p>© 2025 AK Al-Karam Poultry Feeds Mill. All Rights Reserved.</p>
+
+            <!-- UPDATED FOOTER WITH GREEN WHATSAPP NUMBER -->
+            <div class="designer-info">
+                Designed By: Hassan Jatoi | WhatsApp: 
+                <a href="https://wa.me/923083500829" style="color:#25D366; font-weight:700;">
+                    0308-3500829
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
