@@ -418,25 +418,211 @@
 
     </div>
 </section>
+<!-- Contact block: Times New Roman font, clickable phone, email, WhatsApp -->
 
-<!-- CONTACT -->
-<section id="contact">
-    <div class="container">
-        <h2>Contact Details</h2>
+<!DOCTYPE html>
 
-        <ul class="contact-info">
-            <li><strong>Address:</strong> Plot No. 11–12, Khairpur Special Economic Zone</li>
-            <li><strong>Head Office Contact:</strong> 0307-6388887</li>
-            <li><strong>Email:</strong> <a href="mailto:alkarampoultry505@gmail.com">alkarampoultry505@gmail.com</a></li>
+<html lang="ur">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AL-KARAM Poultry Feeds — Contact</title>
 
-            <li><strong>Directors:</strong><br>
-                Shahid Ikram Malik: 0300-8377120 <br>
-                Abdul Hafeez Brohi: 0300-3254547
-            </li>
-        </ul>
+  <!-- Font Awesome for icons -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="" crossorigin="anonymous"/>
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --card:#f8f8f8;
+      --accent:#0a6e3a;
+      --muted:#666;
+      --maxw:980px;
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: "Times New Roman", Times, serif; /* New Roman style */
+      background:var(--bg);
+      color:#1c1c1c;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      direction: ltr;
+    }
+
+    .contact-wrap{
+      max-width:var(--maxw);
+      margin:28px auto;
+      padding:20px;
+      border-radius:12px;
+      background:linear-gradient(180deg,#fff,#fbfbfb);
+      box-shadow:0 6px 24px rgba(18,18,18,0.06);
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:16px;
+      align-items:center;
+    }
+
+    .contact-grid{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .contact-item{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      min-width:220px;
+    }
+
+    .icon{
+      width:48px;
+      height:48px;
+      border-radius:10px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background:var(--card);
+      box-shadow:0 2px 8px rgba(0,0,0,0.03);
+      font-size:18px;
+      color:var(--accent);
+    }
+
+    a.contact-link{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .meta{
+      line-height:1.05;
+    }
+
+    .meta .label{
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .meta .value{
+      font-size:16px;
+      font-weight:600;
+      margin-top:2px;
+      word-break:break-word;
+    }
+
+    .directors{
+      display:flex;
+      gap:12px;
+      flex-direction:column;
+      min-width:220px;
+    }
+
+    .copyright{
+      border-top:1px dashed #e6e6e6;
+      padding-top:12px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .designer a{ text-decoration:none; font-weight:600; color:var(--accent); }
+
+    /* small screens */
+    @media (max-width:640px){
+      .contact-grid{ flex-direction:column; align-items:flex-start; }
+      .contact-item{ width:100%; }
+      .directors{ width:100%; }
+      .copyright{ flex-direction:column; align-items:flex-start; gap:6px; }
+    }
+  </style>
+
+</head>
+<body>
+
+  <main class="contact-wrap" role="contentinfo" aria-label="Contact information for AL-KARAM Poultry Feeds">
+    <div class="contact-grid">
+
+```
+  <!-- Address -->
+  <div class="contact-item" aria-label="Address">
+    <div class="icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></div>
+    <div class="meta">
+      <div class="label">Address</div>
+      <div class="value">Plot No. 11–12, Khairpur Special Economic Zone, Head Office</div>
     </div>
-</section>
+  </div>
 
+  <!-- Head Office Contact -->
+  <div class="contact-item" aria-label="Head office phone">
+    <div class="icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></div>
+    <!-- tel link with international prefix (+92) -->
+    <div class="meta">
+      <div class="label">Head Office Contact</div>
+      <div class="value"><a class="contact-link" href="tel:+923076388887">0307-6388887</a></div>
+    </div>
+  </div>
+
+  <!-- Email -->
+  <div class="contact-item" aria-label="Email">
+    <div class="icon" aria-hidden="true"><i class="fa-solid fa-envelope"></i></div>
+    <div class="meta">
+      <div class="label">Email</div>
+      <div class="value"><a class="contact-link" href="mailto:alkarampoultry505@gmail.com">alkarampoultry505@gmail.com</a></div>
+    </div>
+  </div>
+
+  <!-- WhatsApp (Designer contact) -->
+  <div class="contact-item" aria-label="WhatsApp designer">
+    <div class="icon" aria-hidden="true"><i class="fa-brands fa-whatsapp"></i></div>
+    <div class="meta">
+      <div class="label">Designed By — WhatsApp</div>
+      <!-- open in new tab; wa.me requires country code (Pakistan +92) — number provided: 0308-3500829 -->
+      <div class="value">
+        <a class="contact-link" href="https://wa.me/923083500829?text=Assalamualaikum%20Hassan%20—%20I%20need%20help%20with%20my%20website" target="_blank" rel="noopener">Hassan Jatoi • 0308-3500829</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Directors -->
+  <div class="directors" aria-label="Directors contact">
+    <div class="label">Directors</div>
+
+    <div class="contact-item" style="gap:10px;">
+      <div class="icon" aria-hidden="true"><i class="fa-solid fa-user-tie"></i></div>
+      <div class="meta">
+        <div class="value">Shahid Ikram Malik: <a class="contact-link" href="tel:+923008377120">0300-8377120</a></div>
+      </div>
+    </div>
+
+    <div class="contact-item" style="gap:10px;">
+      <div class="icon" aria-hidden="true"><i class="fa-solid fa-user-tie"></i></div>
+      <div class="meta">
+        <div class="value">Abdul Hafeez Brohi: <a class="contact-link" href="tel:+923003254547">0300-3254547</a></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- footer / copyright -->
+<div class="copyright" role="note">
+  <div>© 2025 AK Al-Karam Poultry Feeds Mill. All Rights Reserved.</div>
+  <div class="designer">Designed By: <a href="https://wa.me/923083500829" target="_blank" rel="noopener">Hassan Jatoi</a> | WhatsApp: <a href="https://wa.me/923083500829" target="_blank" rel="noopener">0308-3500829</a></div>
+</div>
+```
+
+  </main>
+
+</body>
+</html>
 <!-- FOOTER -->
 <footer class="site-footer">
     <div class="container">
@@ -494,6 +680,7 @@ h1{
 
 </body>
 </html>
+
 
 
 
