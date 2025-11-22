@@ -336,37 +336,253 @@
     </div>
 </section>
 
-<!-- PRODUCTS -->
-<section id="products">
-    <div class="container">
-        <h2>Our Feed Products</h2>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Al Karam Feeds — Starter | Grower | Finisher</title>
 
-        <div class="products-grid">
+  <style>
+    /* Global */
+    :root{
+      --brand:#013A6B;
+      --muted:#666;
+      --card-bg: #fff;
+      --page-bg: #f6f8fb;
+      --accent:#FFD700;
+    }
+    html,body{height:100%;}
+    body{
+      margin:0;
+      padding:32px 20px;
+      font-family: "Times New Roman", Times, serif;
+      background:var(--page-bg);
+      color:#111;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-align:center;
+    }
 
-            <!-- FINISHER -->
-            <div class="product-card">
-                <img src="https://i.ibb.co/PGvtHVWZ/3.jpg" class="product-image">
-                <h3><i class="fa-solid fa-drumstick-bite"></i> Broiler Finisher Feed</h3>
-                <p>High-energy feed for maximum weight gain and low FCR. Final stage performance booster.</p>
-            </div>
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+    }
 
-            <!-- STARTER -->
-            <div class="product-card">
-                <img src="https://i.ibb.co/39d6KxBZ/2.jpg" class="product-image">
-                <h3><i class="fa-solid fa-egg"></i> Broiler Starter Feed</h3>
-                <p>Soft & fine crumbled feed designed for day-old chicks with high digestibility.</p>
-            </div>
+    header{
+      margin-bottom:22px;
+    }
 
-            <!-- GROWER -->
-            <div class="product-card">
-                <img src="https://i.ibb.co/7J2zsFDv/1.jpg" class="product-image">
-                <h3><i class="fa-solid fa-seedling"></i> Broiler Grower Feed</h3>
-                <p>Balanced protein & energy mix for healthy mid-age broiler growth.</p>
-            </div>
+    header h1{
+      margin:6px 0 4px;
+      color:var(--brand);
+      font-size:34px;
+      letter-spacing:0.5px;
+    }
+    header p{margin:0;color:var(--muted);} 
 
+    /* Cards grid */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:18px;
+      align-items:start;
+      margin-top:26px;
+    }
+
+    .card{
+      background:var(--card-bg);
+      border-radius:10px;
+      padding:18px;
+      box-shadow:0 6px 18px rgba(2,12,34,0.06);
+      border:1px solid rgba(1,58,107,0.06);
+      text-align:left;
+      display:flex;
+      flex-direction:column;
+      height:100%;
+    }
+
+    .card img{width:100%;height:auto;border-radius:6px;border:1px solid #eee}
+
+    .card h2{color:var(--brand);margin:12px 0 6px;font-size:20px}
+    .age-range{font-weight:bold;color:var(--muted);margin-bottom:8px}
+
+    .benefits{
+      list-style:none;padding:0;margin:10px 0 14px;flex-grow:1;
+    }
+    .benefits li{margin:8px 0;padding-left:6px;}
+    .benefits li::marker{color:var(--brand);} /* works in modern browsers */
+
+    .meta{
+      font-size:14px;color:var(--muted);
+      border-top:1px dashed #eee;padding-top:10px;margin-top:12px;display:flex;justify-content:space-between;align-items:center
+    }
+
+    .actions{
+      display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;margin-top:10px
+    }
+
+    .btn{
+      background:var(--brand);color:#fff;padding:8px 12px;border-radius:6px;border:0;cursor:pointer;font-size:14px
+    }
+    .btn.ghost{background:transparent;color:var(--brand);border:1px solid var(--brand)}
+
+    footer{
+      margin-top:34px;padding:18px 8px;color:#fff;background:var(--brand);border-radius:8px;text-align:center
+    }
+    footer a{color:var(--accent);text-decoration:none}
+
+    /* small screen center everything */
+    @media (max-width:420px){
+      body{padding:20px 12px}
+      header h1{font-size:26px}
+    }
+
+    /* Utility */
+    .center{display:flex;align-items:center;justify-content:center}
+    .badge{background:#F0F8FF;color:var(--brand);padding:6px 8px;border-radius:6px;font-weight:bold}
+    .specs{font-size:14px;color:#222}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Al Karam Feeds</h1>
+      <p>Starter · Grower · Finisher — Clear specifications for broiler birds (Times New Roman)</p>
+    </header>
+
+    <main>
+      <div class="grid" id="cards">
+        <!-- Cards will be injected by JS -->
+      </div>
+
+      <div style="margin-top:18px; text-align:center">
+        <button class="btn" id="printBtn">Print / Save as PDF</button>
+        <button class="btn ghost" id="downloadBtn">Download HTML</button>
+      </div>
+    </main>
+
+    <footer>
+      <div>© 2025 AK Al-Karam Poultry Feeds Mill. All Rights Reserved.</div>
+      <div style="margin-top:6px">Designed By: <a href="https://wa.me/923083500829" target="_blank" rel="noopener">Hassan Jatoi</a> | WhatsApp: <a href="https://wa.me/923083500829" target="_blank" rel="noopener">0308-3500829</a></div>
+    </footer>
+  </div>
+
+  <script>
+    // Data (saved entries)
+    const feeds = [
+      {
+        id: 'starter',
+        title: 'Starter Feed (0C)',
+        range: 'For 0–14 Days Broiler Chicks',
+        img: 'https://i.ibb.co/pBBMFz6Y/STARTER-FEED.png',
+        bullets: [
+          'Rapid Early Growth — high crude protein (21–23%).',
+          'Stronger Immunity — balanced amino acids, vitamins, minerals.',
+          'Better Bone Formation — Ca 0.9–1.2%, P 0.45–0.55%.',
+          'High Energy — Metabolizable Energy 2900–3000 Kcal/kg.',
+          'Improved Digestibility — low fiber 3–5%, controlled ash.',
+          'Boosts Feed Conversion Ratio (FCR).',
+          'Supports Feather Growth — Lysine 1.1–1.3%, Methionine 0.45–0.55%.',
+          'Prevents Dehydration & Salt Imbalance — salt 0.30–0.40%.',
+          'Protects Feed from Spoilage — moisture 10–12%.'
+        ]
+      },
+      {
+        id: 'grower',
+        title: 'Grower Feed (C-01)',
+        range: 'For 15–28 Days Broiler Birds',
+        img: 'https://i.ibb.co/JRLDPvcW/GROWER-FEED.png',
+        bullets: [
+          'Balanced Growth & Muscle Development — crude protein 19–21%.',
+          'Higher Energy — Metabolizable Energy 3000–3100 Kcal/kg.',
+          'Improves Feed Conversion (FCR) — optimized fats 4–6% and amino acids.',
+          'Supports Strong Bones — Ca 0.9–1.2%, Available P 0.45–0.55%.',
+          'Better Digestibility & Gut Health — fiber 3–5%.',
+          'Strengthens Immunity & Disease Resistance.',
+          'Controls Excess Fat Deposition — balanced protein–energy ratio.',
+          'Improves Feather Quality & Body Uniformity.',
+          'Maintains Water & Mineral Balance — salt 0.30–0.40%.'
+        ]
+      },
+      {
+        id: 'finisher',
+        title: 'Finisher Feed (C-03)',
+        range: 'For 29+ Days Broiler Birds',
+        img: 'https://i.ibb.co/mrC3cq04/FINISHER-FEED.png',
+        bullets: [
+          'Maximum Final Weight Gain — crude protein 18–19%.',
+          'High Energy — Metabolizable Energy 3100–3200 Kcal/kg.',
+          'Improves Meat Quality — balanced amino acids and fats.',
+          'Enhances Feed Efficiency (Best FCR Results).',
+          'Smooth Digestion & Gut Stability — fiber 3–5%.',
+          'Stronger Bones for Heavy Weight — Ca 0.9–1.2%, Available P 0.45–0.55%.',
+          'Fat Balance Without Over-Deposition — optimized fat 4–6%.',
+          'Perfect Body Uniformity — Lysine 1.1–1.3%, Methionine 0.45–0.55%.',
+          'Better Feed Palatability — taste and aroma.',
+          'Low Moisture for Safe Storage — moisture 10–12%.'
+        ]
+      }
+    ];
+
+    // Render cards
+    const cardsEl = document.getElementById('cards');
+    feeds.forEach(feed => {
+      const card = document.createElement('article');
+      card.className = 'card';
+      card.innerHTML = `
+        <img src="${feed.img}" alt="${feed.title}">
+        <h2>${feed.title}</h2>
+        <div class="age-range">${feed.range}</div>
+        <ul class="benefits">
+          ${feed.bullets.map(b => `<li>${b}</li>`).join('')}
+        </ul>
+        <div class="meta">
+          <div class="specs">Protein & Energy ranges shown above. For full specs contact us.</div>
+          <div class="actions">
+            <button class="btn" data-id="${feed.id}" onclick="copySpec('${feed.id}')">Copy</button>
+            <button class="btn ghost" onclick="showSpec(${JSON.stringify(feed).replace(/"/g,'&quot;')})">View</button>
+          </div>
         </div>
-    </div>
-</section>
+      `;
+      cardsEl.appendChild(card);
+    });
+
+    // Copy spec to clipboard
+    function copySpec(id){
+      const f = feeds.find(x=>x.id===id);
+      if(!f) return;
+      const text = `${f.title}\n${f.range}\n\n` + f.bullets.map((b,i)=>`${i+1}. ${b}`).join('\n');
+      navigator.clipboard.writeText(text).then(()=>{
+        alert('Specification copied to clipboard.');
+      }).catch(()=>{ alert('Cannot copy (permission denied) — please select and copy manually.'); });
+    }
+
+    // View spec (simple modal using window.open)
+    function showSpec(feed){
+      const w = window.open('', '_blank', 'width=700,height=700,scrollbars=yes');
+      const html = `<!doctype html><html><head><meta charset="utf-8"><title>${feed.title}</title><style>body{font-family: 'Times New Roman', Times, serif;padding:24px;color:#111} h1{color:${getComputedStyle(document.documentElement).getPropertyValue('--brand')||'#013A6B'}} ul{}</style></head><body><h1>${feed.title}</h1><p><strong>${feed.range}</strong></p><img src="${feed.img}" style="max-width:320px;display:block;margin:12px 0;border:1px solid #ddd;border-radius:6px"><ol>${feed.bullets.map(b=>`<li>${b}</li>`).join('')}</ol><p style="margin-top:18px;color:#666">© 2025 AK Al-Karam Poultry Feeds Mill</p></body></html>`;
+      w.document.write(html);
+      w.document.close();
+    }
+
+    // Print
+    document.getElementById('printBtn').addEventListener('click', ()=> window.print());
+
+    // Download HTML (current page) — simple approach
+    document.getElementById('downloadBtn').addEventListener('click', ()=>{
+      const html = '<!doctype html>' + document.documentElement.outerHTML;
+      const blob = new Blob([html], {type: 'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'al-karam-feeds.html'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+
+    // expose functions to window for inline onclick
+    window.copySpec = copySpec; window.showSpec = showSpec;
+  </script>
+</body>
+</html>
 
 <!-- TESTIMONIALS -->
 <section id="testimonials">
@@ -710,4 +926,5 @@
 
 </body>
 </html>
+
 
