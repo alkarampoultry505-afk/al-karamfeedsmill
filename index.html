@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AL KARAM Feeds - Khairpur Poultry Feed Mill | Premium Quality</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
@@ -25,15 +21,15 @@
             --max-width: 1200px;
         }
 
-        /* Base Typography */
+        /* Base Typography: Using Times New Roman */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Times New Roman', Times, serif; /* Changed Font */
             background: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
             text-align: left;
-            direction: ltr; /* English LTR */
+            direction: ltr;
         }
         a { text-decoration: none; color: var(--primary-color); transition: color 0.3s; }
         a:hover { color: var(--accent-color); }
@@ -43,39 +39,62 @@
             margin: 0 auto;
         }
 
-        /* Buttons & CTAs */
+        /* Buttons & CTAs - MODERN SPECIAL STYLING */
         .btn {
-            padding: 12px 25px;
+            padding: 14px 30px; /* Increased Padding */
             border-radius: 50px; /* Pill-shaped */
-            font-weight: 600;
+            font-weight: 700; /* Bolder text */
+            text-transform: uppercase;
+            letter-spacing: 1px;
             display: inline-flex;
-            gap: 10px;
+            gap: 12px;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
             text-align: center;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Times New Roman', Times, serif;
             font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
         }
+        
+        /* Primary Button Style */
         .btn-primary {
             background: var(--primary-color);
             color: var(--bg-color);
             border: 2px solid var(--primary-color);
+            box-shadow: var(--shadow-soft);
         }
         .btn-primary:hover {
             background: var(--accent-color);
             border-color: var(--accent-color);
-            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 74, 127, 0.3);
         }
+        
+        /* WhatsApp Button Style - Highlighted */
         .btn-whatsapp {
             background: #25D366;
             color: var(--bg-color);
             border: 2px solid #25D366;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
         }
         .btn-whatsapp:hover {
             background: #128C7E;
             border-color: #128C7E;
+            transform: scale(1.05); /* Special hover effect */
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+        }
+        
+        /* Icon Styling within Buttons */
+        .btn i {
+            font-size: 1.1em;
+            transition: transform 0.3s;
+        }
+        .btn-primary:hover i {
+            transform: scale(1.2);
         }
 
         /* Header */
@@ -95,11 +114,11 @@
         .logo img { width: 120px; border-radius: 8px; }
 
         /* Navigation */
-        .nav-toggle { display: none; } /* Mobile toggle */
+        .nav-toggle { display: none; }
         nav.primary-nav {
             display: flex;
             gap: 20px;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Times New Roman', Times, serif;
             font-weight: 600;
         }
         nav.primary-nav a {
@@ -112,23 +131,24 @@
             border-bottom: 2px solid var(--secondary-color);
         }
 
-        /* Hero Section */
+        /* Hero Section - Using a Serif font for classic look */
         #hero {
-            background: linear-gradient(rgba(0, 74, 127, 0.75), rgba(0, 74, 127, 0.75)), url('https://i.ibb.co/PGvtHVWZ/3.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 74, 127, 0.8), rgba(0, 74, 127, 0.8)), url('https://i.ibb.co/PGvtHVWZ/3.jpg') center/cover no-repeat;
             color: var(--bg-color);
             padding: 120px 15px;
             text-align: center;
         }
         #hero h1 {
-            font-family: 'Playfair Display', serif; /* Elegant font for heading */
-            font-size: 3rem;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 3.5rem; /* Larger font */
             margin-bottom: 15px;
             font-weight: 700;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
         #hero p {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 30px;
-            font-weight: 300;
+            font-weight: 400;
         }
         .cta-bar {
             background: var(--secondary-color);
@@ -139,10 +159,13 @@
             justify-content: center;
         }
         .cta-bar .btn {
-            padding: 10px 20px;
+            padding: 12px 25px; /* Slightly smaller in CTA bar */
+            font-weight: 700;
+            text-transform: none;
+        }
+        .cta-bar .btn-primary {
             background: var(--primary-color);
             color: var(--bg-color);
-            font-weight: 700;
         }
         .cta-bar .btn-whatsapp {
             background: #25D366;
@@ -151,7 +174,7 @@
         /* Sections */
         section { padding: 80px 0; }
         section h2 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Times New Roman', Times, serif;
             color: var(--primary-color);
             font-size: 2.5rem;
             border-bottom: 4px solid var(--secondary-color);
@@ -164,7 +187,7 @@
         
         /* General Centering for H2 */
         #about h2, #products h2, #gallery h2, #testimonials h2, #contact h2 {
-            display: block; /* Ensure it takes full width for centering */
+            display: block; 
             width: fit-content;
             margin-left: auto;
             margin-right: auto;
@@ -187,6 +210,7 @@
 
         /* Feature List (What Makes Us Different) */
         .feature-list {
+            /* ... (Keep feature list styling largely the same) */
             list-style: none;
             padding: 0;
             margin-top: 25px;
@@ -199,7 +223,7 @@
         }
         .feature-list li {
             background: var(--subtle-bg);
-            padding: 15px 50px 15px 20px; /* Padding for icon */
+            padding: 15px 50px 15px 20px;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             position: relative;
@@ -207,11 +231,11 @@
             border-left: 5px solid var(--accent-color);
         }
         .feature-list li:before {
-            content: "\f00c"; /* Checkmark icon */
+            content: "\f00c"; 
             font-family: "Font Awesome 6 Free";
             font-weight: 900;
             position: absolute;
-            left: 15px; /* LTR positioning */
+            left: 15px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--primary-color);
@@ -221,7 +245,7 @@
         /* Products Section (Card Styling) */
         #products {
             background: var(--subtle-bg);
-            padding-bottom: 80px; /* Adjusted padding */
+            padding-bottom: 80px; 
             text-align: center;
         }
         .products-grid {
@@ -243,48 +267,12 @@
             transform: translateY(-5px);
             box-shadow: var(--shadow-hover);
         }
-        .product-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
         .product-card h3 {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Times New Roman', Times, serif;
             color: var(--primary-color);
-            font-size: 1.8rem;
+            font-size: 2rem; /* Larger Product Heading */
             margin-bottom: 5px;
             font-weight: 700;
-        }
-        .product-card .age-range {
-            color: var(--accent-color);
-            font-style: italic;
-            margin-bottom: 15px;
-            display: block;
-            font-weight: 600;
-        }
-        .product-card ul {
-            list-style: none;
-            padding: 0;
-            margin: 15px 0;
-        }
-        .product-card ul li {
-            padding-left: 25px;
-            position: relative;
-            margin-bottom: 10px;
-        }
-        .product-card ul li:before {
-            content: "\f058"; /* Check circle icon */
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: #25D366;
-        }
-        .product-card .btn-wrapper {
-            text-align: center;
-            margin-top: 20px;
         }
         
         /* Factory Gallery Styling */
@@ -313,7 +301,7 @@
         }
         .gallery-item img {
             width: 100%;
-            height: 350px; /* Fixed height for consistency */
+            height: 350px; 
             object-fit: cover;
             display: block;
             transition: opacity 0.3s;
@@ -376,19 +364,19 @@
         }
         .contact-item .icon {
             color: var(--primary-color);
-            font-size: 1.5rem;
+            font-size: 1.7rem; /* Larger icon in contact */
             width: 30px;
             text-align: center;
         }
         .contact-item .label {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Times New Roman', Times, serif;
             font-weight: 600;
             color: var(--accent-color);
             font-size: 0.9rem;
             display: block;
         }
         .contact-item .value {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Times New Roman', Times, serif;
             font-weight: 700;
             font-size: 1.1rem;
             color: var(--text-color);
@@ -396,25 +384,28 @@
         .contact-item a { color: var(--text-color); }
         .contact-item a:hover { color: var(--primary-color); }
 
-        /* Floating WhatsApp */
+        /* Floating WhatsApp - Enhanced */
         .whatsapp-float {
             position: fixed;
-            right: 20px; /* LTR positioning for the button */
-            bottom: 20px;
+            right: 25px; 
+            bottom: 25px;
             background: #25D366;
             color: #fff;
-            width: 55px;
-            height: 55px;
+            width: 60px; /* Larger float button */
+            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            font-size: 30px;
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.6); /* More prominent shadow */
             z-index: 9999;
-            transition: transform 0.3s;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
-        .whatsapp-float:hover { transform: scale(1.1); }
+        .whatsapp-float:hover { 
+            transform: scale(1.2) rotate(5deg); /* Special hover effect */
+            background: #128C7E;
+        }
 
         /* Footer */
         footer.site-footer {
@@ -423,7 +414,7 @@
             padding: 30px 0;
             text-align: center;
             font-size: 0.9rem;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Times New Roman', Times, serif;
         }
         footer a { color: var(--secondary-color); }
 
@@ -439,8 +430,7 @@
             /* Mobile Navigation */
             nav.primary-nav { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: var(--primary-color); box-shadow: var(--shadow-heavy); padding: 10px 0; }
             nav.primary-nav.open { display: flex; }
-            nav.primary-nav a { padding: 10px 20px; border-bottom: none; border-left: 3px solid transparent; }
-            nav.primary-nav a:hover { border-left: 3px solid var(--secondary-color); }
+            nav.primary-nav a { padding: 10px 20px; border-bottom: none; border-left: 3px solid var(--secondary-color); }
             
             .nav-toggle { display: block; color: var(--bg-color); background: none; border: none; font-size: 1.5rem; cursor: pointer; }
             .header-inner { padding: 10px 15px; }
@@ -453,6 +443,9 @@
             .contact-item { text-align: center; }
             
             .gallery-item img { height: 250px; }
+            
+            .btn { padding: 12px 20px; font-size: 0.9rem; }
+            .whatsapp-float { width: 50px; height: 50px; font-size: 24px; right: 15px; bottom: 15px; }
         }
         
     </style>
@@ -473,15 +466,16 @@
             <nav class="primary-nav" id="primaryNav">
                 <a href="#about">About</a>
                 <a href="#products">Products</a>
-                <a href="#gallery">Gallery</a> <a href="#testimonials">Testimonials</a>
+                <a href="#gallery">Gallery</a> 
+                <a href="#testimonials">Testimonials</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
     </header>
 
     <div class="cta-bar">
-        <a class="btn btn-primary" href="tel:+923076388887"><i class="fa-solid fa-phone-volume"></i> Call Now: 0307-6388887</a>
-        <a class="btn btn-whatsapp" href="https://wa.me/923076388887"><i class="fa-brands fa-whatsapp"></i> WhatsApp Now</a>
+        <a class="btn btn-primary" href="tel:+923076388887"><i class="fa-solid fa-phone-volume"></i> CALL NOW: 0307-6388887</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/923076388887"><i class="fa-brands fa-whatsapp"></i> WHATSAPP NOW</a>
     </div>
 
     <section id="hero">
@@ -538,7 +532,7 @@
                         <li>High Energy — Metabolizable Energy 2900–3000 Kcal/kg.</li>
                     </ul>
                     <div class="btn-wrapper">
-                        <a class="btn btn-primary" href="#contact">Order Now <i class="fa-solid fa-arrow-right"></i></a>
+                        <a class="btn btn-primary" href="#contact">ORDER NOW <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </article>
 
@@ -553,7 +547,7 @@
                         <li>Strengthens Immunity & Disease Resistance.</li>
                     </ul>
                     <div class="btn-wrapper">
-                        <a class="btn btn-primary" href="#contact">Order Now <i class="fa-solid fa-arrow-right"></i></a>
+                        <a class="btn btn-primary" href="#contact">ORDER NOW <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </article>
 
@@ -568,7 +562,7 @@
                         <li>Stronger Bones for Heavy Weight — Ca 0.9–1.2%, Available P 0.45–0.55%.</li>
                     </ul>
                     <div class="btn-wrapper">
-                        <a class="btn btn-primary" href="#contact">Order Now <i class="fa-solid fa-arrow-right"></i></a>
+                        <a class="btn btn-primary" href="#contact">ORDER NOW <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </article>
 
@@ -588,9 +582,9 @@
                 <div class="gallery-item">
                     <img src="https://i.ibb.co/N64tp6zf/Gemini-Generated-Image-nzjrwnzjrwnzjrwn.png" alt="Feed Production Machinery">
                 </div>
-
-                </div>
+                
             </div>
+        </div>
     </section>
 
     <section id="testimonials">
@@ -612,7 +606,7 @@
                 <p> “Birds stay healthy and active. Scientifically strong formulation.”</p>
             </div>
             
-            <a class="btn btn-primary" href="https://wa.me/923076388887">View More Testimonials</a>
+            <a class="btn btn-primary" href="https://wa.me/923076388887">VIEW MORE TESTIMONIALS</a>
 
         </div>
     </section>
