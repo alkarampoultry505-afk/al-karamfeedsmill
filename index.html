@@ -161,6 +161,14 @@
             font-weight: 700;
             text-align: center;
         }
+        
+        /* General Centering for H2 */
+        #about h2, #products h2, #gallery h2, #testimonials h2, #contact h2 {
+            display: block; /* Ensure it takes full width for centering */
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
         /* About Section */
         #about h3 {
@@ -213,7 +221,7 @@
         /* Products Section (Card Styling) */
         #products {
             background: var(--subtle-bg);
-            padding-bottom: 0;
+            padding-bottom: 80px; /* Adjusted padding */
             text-align: center;
         }
         .products-grid {
@@ -278,6 +286,42 @@
             text-align: center;
             margin-top: 20px;
         }
+        
+        /* Factory Gallery Styling */
+        #gallery {
+            background: var(--bg-color);
+            padding-top: 40px;
+            padding-bottom: 80px;
+            text-align: center;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 350px; /* Fixed height for consistency */
+            object-fit: cover;
+            display: block;
+            transition: opacity 0.3s;
+        }
+        .gallery-item:hover img {
+             opacity: 0.9;
+        }
+
 
         /* Testimonials */
         #testimonials { 
@@ -388,6 +432,7 @@
             #hero h1 { font-size: 2.5rem; }
             section h2 { font-size: 2rem; }
             .products-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
         }
 
         @media(max-width: 768px) {
@@ -406,6 +451,8 @@
             
             .cta-bar { justify-content: space-around; }
             .contact-item { text-align: center; }
+            
+            .gallery-item img { height: 250px; }
         }
         
     </style>
@@ -426,7 +473,7 @@
             <nav class="primary-nav" id="primaryNav">
                 <a href="#about">About</a>
                 <a href="#products">Products</a>
-                <a href="#testimonials">Testimonials</a>
+                <a href="#gallery">Gallery</a> <a href="#testimonials">Testimonials</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
@@ -527,6 +574,23 @@
 
             </div>
         </div>
+    </section>
+    
+    <section id="gallery">
+        <div class="container">
+            <h2><i class="fa-solid fa-building-circle-check"></i> Factory Gallery</h2>
+            <div class="gallery-grid">
+                
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/HD3ZSDvk/Gemini-Generated-Image-gv2sj5gv2sj5gv2s.png" alt="Feed Factory Interior View">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/N64tp6zf/Gemini-Generated-Image-nzjrwnzjrwnzjrwn.png" alt="Feed Production Machinery">
+                </div>
+
+                </div>
+            </div>
     </section>
 
     <section id="testimonials">
