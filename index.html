@@ -7,35 +7,49 @@
     
     <meta name="description" content="Al Karam Poultry Feeds Mill Khairpur: Premium Starter, Grower & Finisher feed manufacturer in Sindh. Lab-tested quality for maximum FCR and healthy poultry growth. Contact us for bulk rates.">
     
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        /* Modern & Elegant Styling */
+        /* Modern & Dynamic Styling */
         :root {
-            --primary-color: #004A7F; /* Deep Blue */
-            --secondary-color: #FFC300; /* Bright Gold/Yellow */
-            --accent-color: #E63946; /* Reddish Accent */
-            --bg-color: #FFFFFF; /* White Background */
-            --text-color: #212529; /* Dark Text */
-            --subtle-bg: #F8F9FA; /* Light Gray BG */
-            --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.08);
-            --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+            --primary-color: #1A2E44; /* Dark Blue - almost black */
+            --secondary-color: #FF8C00; /* Bright Orange */
+            --accent-color: #00BFFF; /* Deep Sky Blue for highlights */
+            --bg-color: #F8F9FA; /* Light Gray Background */
+            --text-color: #343A40; /* Darker Text */
+            --light-text: #6C757D; /* Lighter Text */
+            --card-bg: #FFFFFF; /* White Card Background */
+            --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.15);
             --max-width: 1200px;
+            --border-radius-lg: 12px;
+            --border-radius-sm: 8px;
         }
 
-        /* Base Typography: Using Times New Roman */
+        /* Base Typography: Using Poppins */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Times New Roman', Times, serif; 
+            font-family: 'Poppins', sans-serif;
             background: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.7; 
             text-align: left;
             direction: ltr;
-            /* Added padding-top to account for the fixed top bar */
-            padding-top: 40px; 
+            padding-top: 50px; 
         }
-        a { text-decoration: none; color: var(--primary-color); transition: color 0.3s; }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-color);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        h1 { font-size: 3.8rem; } 
+        h2 { font-size: 2.8rem; margin-bottom: 2.5rem; }
+        p { margin-bottom: 1rem; }
+
+        a { text-decoration: none; color: var(--secondary-color); transition: color 0.3s ease; }
         a:hover { color: var(--accent-color); }
         .container {
             width: 90%;
@@ -43,9 +57,9 @@
             margin: 0 auto;
         }
 
-        /* NEW: Sticky Top Contact Bar */
+        /* Sticky Top Contact Bar */
         .top-contact-bar {
-            background: var(--accent-color); /* Reddish accent for urgency */
+            background: var(--primary-color); 
             color: var(--bg-color);
             padding: 8px 0;
             text-align: center;
@@ -53,144 +67,685 @@
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 10000; /* Highest z-index */
-            font-weight: 700;
+            z-index: 10000; 
+            font-weight: 500;
+            font-size: 0.95rem;
         }
         .top-contact-bar a {
-            color: var(--secondary-color);
-            margin: 0 10px;
+            color: var(--accent-color);
+            margin: 0 8px;
+            font-weight: 600;
         }
+        .top-contact-bar i { color: var(--secondary-color); margin-right: 5px; }
 
-        /* Buttons & CTAs - MODERN SPECIAL STYLING */
+        /* Buttons & CTAs - MODERN STYLING */
         .btn {
-            padding: 14px 30px; 
+            padding: 15px 35px; 
             border-radius: 50px; 
-            font-weight: 700; 
+            font-weight: 600; 
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.8px;
             display: inline-flex;
             gap: 12px;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition: all 0.3s ease-in-out;
             text-align: center;
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.05rem;
             position: relative;
             overflow: hidden;
             z-index: 1;
         }
         
-        /* Primary Button Style */
         .btn-primary {
-            background: var(--primary-color);
-            color: var(--bg-color);
-            border: 2px solid var(--primary-color);
-            box-shadow: var(--shadow-soft);
+            background: var(--secondary-color);
+            color: var(--card-bg);
+            border: 2px solid var(--secondary-color);
+            box-shadow: var(--shadow-light);
         }
         .btn-primary:hover {
-            background: var(--accent-color);
-            border-color: var(--accent-color);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 74, 127, 0.3);
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: var(--card-bg);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: var(--shadow-hover);
         }
         
-        /* WhatsApp Button Style - Highlighted */
         .btn-whatsapp {
-            background: #25D366;
-            color: var(--bg-color);
+            background: #25D366; 
+            color: var(--card-bg);
             border: 2px solid #25D366;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
         }
         .btn-whatsapp:hover {
-            background: #128C7E;
+            background: #128C7E; 
             border-color: #128C7E;
-            transform: scale(1.05); 
+            transform: scale(1.03); 
             box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
         }
         
         .btn i {
-            font-size: 1.1em;
-            transition: transform 0.3s;
-            animation: pulse 2s infinite; 
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+            animation: bounce 1.5s infinite; 
         }
-        .btn-primary:hover i {
-            transform: scale(1.2);
-            animation: none;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        .btn-primary:hover i, .btn-whatsapp:hover i {
+            animation: none; 
+            transform: scale(1.1);
         }
 
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-5px);}
+            60% {transform: translateY(-2px);}
+        }
 
-        /* Header */
+
+        /* Header - Modern, slightly transparent */
         header.site-header {
-            background: var(--primary-color);
-            position: sticky;
-            top: 40px; /* Adjusted to be below the sticky bar */
-            z-index: 1000;
-            box-shadow: var(--shadow-soft);
+            background: rgba(255, 255, 255, 0.95); 
+            backdrop-filter: blur(5px); 
+            position: fixed; 
+            top: 40px; 
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            box-shadow: var(--shadow-light);
+            transition: background 0.3s ease, top 0.3s ease;
         }
+        
         .header-inner {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 15px 0;
+            padding: 12px 0; 
         }
-        .logo img { width: 120px; border-radius: 8px; }
+        .logo img { 
+            width: 100px; 
+            border-radius: var(--border-radius-sm); 
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
 
-        /* Navigation styles retained */
-        /* ... */
+        /* Navigation - Sleek */
+        .nav-toggle { display: none; } 
+        nav.primary-nav {
+            display: flex;
+            gap: 25px; 
+            font-weight: 500;
+        }
+        nav.primary-nav a {
+            color: var(--primary-color);
+            padding: 8px 0;
+            position: relative;
+        }
+        nav.primary-nav a::after { 
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+        nav.primary-nav a:hover::after {
+            width: 100%;
+        }
 
         /* Hero Section */
         #hero {
-            background: linear-gradient(rgba(0, 74, 127, 0.8), rgba(0, 74, 127, 0.8)), url('https://i.ibb.co/PGvtHVWZ/3.jpg') center/cover no-repeat;
-            color: var(--bg-color);
-            padding: 120px 15px;
+            background: linear-gradient(135deg, rgba(26, 46, 68, 0.85), rgba(0, 191, 255, 0.7)), url('https://i.ibb.co/PGvtHVWZ/3.jpg') center/cover no-repeat;
+            color: var(--card-bg);
+            padding: 150px 15px; 
             text-align: center;
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            min-height: 600px; 
+            position: relative;
         }
         #hero h1 {
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 3.5rem; 
-            margin-bottom: 15px;
-            font-weight: 700;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            font-size: 4.5rem; 
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+            color: var(--card-bg); 
         }
         #hero p {
-            font-size: 1.4rem;
-            margin-bottom: 30px;
-            font-weight: 400;
+            font-size: 1.6rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-content {
+            z-index: 2; 
+            position: relative;
         }
         
         /* Simplified CTA Bar */
         .cta-bar {
-            background: var(--secondary-color);
-            padding: 15px 0;
+            background: transparent; 
+            padding: 0; 
             display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
             justify-content: center;
+            margin-top: 20px; 
         }
         .cta-bar .btn {
-            padding: 15px 40px; 
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-transform: none;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            font-size: 1.25rem; 
+            padding: 18px 45px;
+            box-shadow: var(--shadow-hover);
         }
 
-        /* Sections, Testimonials, Map styles retained */
-        /* ... */
+        /* Sections */
+        section { 
+            padding: 80px 0; 
+            position: relative;
+            z-index: 1;
+        }
+        section:nth-of-type(odd) { 
+            background: var(--bg-color); 
+        }
+        section:nth-of-type(even) {
+            background: var(--card-bg);
+        }
+        section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 15px;
+            font-size: 2.8rem;
+            font-weight: 700;
+        }
+        section h2::after { 
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px; 
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
         
-        /* Responsive adjustments for sticky bar */
+        /* About Section Styles */
+        #about h3 {
+            font-size: 1.8rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        .feature-list {
+            list-style: none; 
+            padding: 0;
+            margin-bottom: 25px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        .feature-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+            color: var(--text-color);
+        }
+        .feature-list li::before {
+            content: '\f00c'; 
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-size: 1.1em;
+            top: 3px;
+        }
+        .feature-list li strong { color: var(--accent-color); font-weight: 600; }
+
+        /* Products Section Styles */
+        #products { background: var(--bg-color); }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-light);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            padding-bottom: 25px;
+            border-top: 5px solid var(--secondary-color);
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        .product-card img {
+            width: 100%;
+            height: 220px; 
+            object-fit: cover;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--bg-color);
+        }
+        .product-card h3 {
+            font-size: 1.7rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            padding: 0 15px;
+        }
+        .product-card .age-range {
+            display: block;
+            color: var(--light-text);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            padding: 0 15px;
+        }
+        .product-card ul {
+            list-style: none;
+            padding: 0 25px 20px;
+            text-align: left;
+        }
+        .product-card ul li {
+            margin-bottom: 8px;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 25px;
+            font-size: 0.95rem;
+        }
+        .product-card ul li::before {
+            content: '\f058'; 
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-size: 1em;
+            top: 2px;
+        }
+        .product-card .btn-wrapper {
+            padding: 0 15px;
+        }
+
+        /* Why Choose Us Section Styles */
+        #why-us {
+            background: var(--card-bg);
+        }
+        .reason-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .reason-card {
+            background: var(--bg-color);
+            padding: 30px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-light);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-bottom: 4px solid var(--secondary-color); 
+        }
+        .reason-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent-color);
+        }
+        .reason-card .icon {
+            font-size: 4rem; 
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            display: block;
+            animation: fadeInDown 0.8s ease-out;
+        }
+        
+        /* Gallery Section Styles */
+        #gallery { background: var(--bg-color); }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .gallery-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-light);
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* Testimonials Section Styles */
+        #testimonials { 
+            background: var(--card-bg); 
+            text-align: center;
+            padding-bottom: 50px;
+        }
+        .testimonial-card {
+            background: var(--bg-color); 
+            padding: 25px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-left: 6px solid var(--accent-color); 
+            margin-bottom: 20px; 
+            font-style: italic;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        .testimonial-card strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.15rem;
+            font-style: normal;
+            font-weight: 600;
+        }
+        .testimonial-card p {
+            font-size: 1rem;
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+        #testimonials .btn { margin-top: 30px; } 
+
+        /* Location/Map Section Styles */
+        #location {
+            background: var(--bg-color);
+            text-align: center;
+        }
+        .map-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 40px auto 0;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+            border: 1px solid var(--light-text); 
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 450px; 
+            border: 0;
+        }
+
+        /* Contact Section Styles */
+        #contact { 
+            background: var(--card-bg);
+            padding-top: 80px;
+        }
+        .contact-info {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: flex-start; 
+            gap: 15px;
+            background: var(--bg-color);
+            padding: 25px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .contact-item .icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            flex-shrink: 0; 
+        }
+        .contact-item .label {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--light-text);
+            margin-bottom: 5px;
+        }
+        .contact-item .value {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+        .contact-item .value a { color: var(--primary-color); }
+        .contact-item .value a:hover { color: var(--secondary-color); }
+
+        #contact h3 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+        #contact .director-contacts {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+        .price-list-message {
+            margin-top: 50px;
+            text-align: center;
+            padding: 30px;
+            background: var(--bg-color);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-light);
+            border-top: 4px solid var(--secondary-color);
+        }
+        .price-list-message h3 {
+            color: var(--accent-color);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .price-list-message p {
+            font-size: 1.3rem;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+        .price-list-message b { color: var(--primary-color); }
+
+
+        /* NEW: MODERN FOOTER STYLING */
+        footer.site-footer {
+            background: var(--primary-color);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 0 20px; /* Increased top padding */
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr; /* 3 columns: Wide, Medium, Medium */
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-logo-col p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-top: 15px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .footer-col h4 {
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 5px;
+        }
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 30px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+
+        /* Footer Links */
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: color 0.3s ease;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+        }
+        .footer-links a:hover {
+            color: var(--accent-color);
+            transform: translateX(5px);
+        }
+        .footer-links i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+
+        /* Social Icons */
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        .social-links a {
+            color: var(--card-bg);
+            background: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .social-links a:hover {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Copyright Section */
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .footer-bottom a {
+            color: var(--accent-color);
+        }
+        .footer-bottom a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Floating WhatsApp - Modernized */
+        .whatsapp-float {
+            position: fixed;
+            right: 25px; 
+            bottom: 25px;
+            background: #25D366;
+            color: #fff;
+            width: 65px; 
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px; 
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5); 
+            z-index: 9999;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .whatsapp-float:hover { 
+            transform: scale(1.15) rotate(10deg); 
+            background: #128C7E;
+            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.7);
+        }
+
+
+        /* Responsive Design */
+        @media(max-width: 992px) {
+            h1 { font-size: 3.5rem; }
+            h2 { font-size: 2.4rem; }
+            #hero { padding: 100px 15px; min-height: 500px; }
+            .cta-bar .btn { font-size: 1.1rem; padding: 16px 35px; }
+            .footer-content { grid-template-columns: 1fr 1fr; } /* 2 columns on tablet */
+            .footer-logo-col { grid-column: span 2; } /* Full width for logo/about on tablet */
+            .footer-col h4 { margin-top: 20px; }
+        }
+
         @media(max-width: 768px) {
-            body { padding-top: 30px; } /* Adjust padding for smaller bar */
-            .top-contact-bar { font-size: 0.9rem; padding: 5px 0; }
-            header.site-header { top: 30px; } /* Adjust header position */
+            body { padding-top: 80px; }
+            .top-contact-bar { font-size: 0.85rem; padding: 6px 0; }
+            header.site-header { top: 35px; } 
+            
+            .header-inner { flex-wrap: wrap; justify-content: space-between; gap: 10px; padding: 10px 15px; }
+            .logo { flex-basis: auto; text-align: left; }
+            .nav-toggle { display: block; }
+            nav.primary-nav { 
+                display: none; 
+                flex-direction: column; 
+                position: absolute; 
+                top: 100%; 
+                left: 0; 
+                width: 100%; 
+                background: var(--primary-color); 
+                box-shadow: var(--shadow-hover); 
+                padding: 10px 0; 
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            nav.primary-nav.open { display: flex; }
+            nav.primary-nav a { 
+                color: var(--card-bg); 
+                padding: 12px 25px; 
+                border-left: 4px solid var(--secondary-color); 
+                margin: 0 15px; 
+                font-weight: 500;
+            }
+            
+            h1 { font-size: 2.5rem; }
+            #hero { padding: 80px 10px; min-height: 400px; }
+            #hero p { font-size: 1.1rem; }
+            .cta-bar .btn { font-size: 1rem; padding: 14px 25px; }
+
+            section { padding: 50px 0; }
+            h2 { font-size: 2rem; margin-bottom: 40px; }
+            .feature-list { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; } /* Single column on mobile */
+            .footer-logo-col { grid-column: span 1; }
+            .footer-col h4 { margin-top: 40px; }
         }
         
     </style>
@@ -229,7 +784,7 @@
     </div>
 
     <section id="hero">
-        <div class="container">
+        <div class="container hero-content">
             <h1>Welcome to Al Karam Khairpur Feeds</h1>
             <p>Premium Quality Poultry Feeds for Maximum Farm Profitability.</p>
             <p class="lead">"Feed That Grows Your Farm"</p>
@@ -247,7 +802,7 @@
             <h3><i class="fa-solid fa-star"></i> Our Features</h3>
             <ul class="feature-list">
                 <li>100% laboratory-tested and quality–assured feed</li>
-                <li>**QUALITY GUARANTEE:** Our Starter Feed consistently delivers **21-23% Crude Protein** (Lab Verified)</li>
+                <li><strong>QUALITY GUARANTEE:</strong> Our Starter Feed consistently delivers **21-23% Crude Protein** (Lab Verified)</li>
                 <li>Daily production of more than <strong>200 bags</strong></li>
                 <li>Modern grinding, mixing, and pelleting system</li>
                 <li>Balanced nutrition for Starter, Grower, Broiler & Finisher feeds</li>
@@ -256,7 +811,7 @@
                 <li>Guidance and support for farmers</li>
             </ul>
 
-            <h3 style="color:var(--accent-color);"><i class="fa-solid fa-lightbulb"></i> What Makes Us Different?</h3>
+            <h3 style="color:var(--secondary-color);"><i class="fa-solid fa-lightbulb"></i> What Makes Us Different?</h3>
             <ul class="feature-list">
                 <li>Scientifically formulated nutrient balance</li>
                 <li>High digestibility and fast weight gain</li>
@@ -458,4 +1013,151 @@
 
             <div class="testimonial-card">
                 <strong><i class="fa-solid fa-user-doctor"></i> 18. Dr. Sohail Mirani</strong>
-                <p> “Excellent energy den
+                <p> “Excellent energy density helps the birds perform well even in tough weather conditions.”</p>
+            </div>
+
+            <div class="testimonial-card">
+                <strong><i class="fa-solid fa-user"></i> 19. Farmer: Zahid Kalwar, Naushahro Feroze</strong>
+                <p> “The continuous support and advice from their team is invaluable for running my farm smoothly.”</p>
+            </div>
+
+            <div class="testimonial-card">
+                <strong><i class="fa-solid fa-user"></i> 20. Farm Owner: Khadim Hussain</strong>
+                <p> “Al Karam Feeds: The formula for a profitable poultry cycle.”</p>
+            </div>
+            
+            <a class="btn btn-primary" href="https://wa.me/923076388887">VIEW MORE TESTIMONIALS</a>
+
+        </div>
+    </section>
+    
+    <section id="location">
+        <div class="container">
+            <h2><i class="fa-solid fa-signs-post"></i> Our Location (Khairpur Special Economic Zone)</h2>
+            <p>Visit our Head Office located in the Khairpur Special Economic Zone.</p>
+            
+            <div class="map-container">
+                <iframe src="https://maps.google.com/?cid=6919861472327700519&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2><i class="fa-solid fa-map-location-dot"></i> Contact Information</h2>
+            
+            <ul class="contact-info">
+                
+                <li class="contact-item">
+                    <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <span class="label">Address</span>
+                        <div class="value">Plot No. 11–12, Khairpur Special Economic Zone, Head Office</div>
+                    </div>
+                </li>
+
+                <li class="contact-item">
+                    <div class="icon"><i class="fa-solid fa-phone"></i></div>
+                    <div>
+                        <span class="label">Head Office Contact</span>
+                        <div class="value"><a href="tel:+923076388887">0307-6388887</a></div>
+                    </div>
+                </li>
+
+                <li class="contact-item">
+                    <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div>
+                        <span class="label">Email</span>
+                        <div class="value"><a href="mailto:alkarampoultry505@gmail.com">alkarampoultry505@gmail.com</a></div>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 style="color:var(--primary-color); font-size:2rem; margin-top:40px; margin-bottom:30px;"><i class="fa-solid fa-user-group"></i> Director Contacts</h3>
+            
+            <div class="director-contacts">
+                <div class="director-contact-card">
+                    <div class="icon"><i class="fa-solid fa-user-tie"></i></div>
+                    <div>
+                        <span class="label">Shahid Ikram Malik</span>
+                        <div class="value"><a href="tel:+923008377120">0300-8377120</a></div>
+                    </div>
+                </div>
+                <div class="director-contact-card">
+                    <div class="icon"><i class="fa-solid fa-user-tie"></i></div>
+                    <div>
+                        <span class="label">Abdul Hafeez Brohi</span>
+                        <div class="value"><a href="tel:+923003254547">0300-3254547</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="price-list-message">
+                <h3>Feed Price List</h3>
+                <p><b>Prices will be updated soon. Please call or WhatsApp us for the latest rates.</b></p>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                
+                <div class="footer-col footer-logo-col">
+                    <img src="https://i.ibb.co/0yD8JYzv/logo-for-al-karam.jpg" alt="Al Karam Feeds Logo" style="width: 100px; border-radius: var(--border-radius-sm);">
+                    <p>Al Karam Poultry Feeds Mill Khairpur is dedicated to providing high-quality, lab-tested poultry feed to maximize farmer profitability in Sindh and beyond. We are your partner in growth.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/923076388887" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="tel:+923076388887" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about"><i class="fa-solid fa-arrow-right"></i> About Us</a></li>
+                        <li><a href="#products"><i class="fa-solid fa-arrow-right"></i> Our Products</a></li>
+                        <li><a href="#why-us"><i class="fa-solid fa-arrow-right"></i> Why Choose Us</a></li>
+                        <li><a href="#testimonials"><i class="fa-solid fa-arrow-right"></i> Customer Reviews</a></li>
+                        <li><a href="#contact"><i class="fa-solid fa-arrow-right"></i> Get Price List</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="tel:+923076388887"><i class="fa-solid fa-phone"></i> 0307-6388887</a>
+                        </li>
+                        <li>
+                            <a href="mailto:alkarampoultry505@gmail.com"><i class="fa-solid fa-envelope"></i> alkarampoultry505@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i> Khairpur Special Economic Zone
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <div>© 2025 AK Al-Karam Poultry Feeds Mill. All Rights Reserved.</div>
+                <div style="margin-top:5px;">Developed with <i class="fa-solid fa-heart" style="color:var(--accent-color);"></i> by: <a href="https://wa.me/923083500829" target="_blank" rel="noopener">Hassan Jatoi (0308-3500829)</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <a class="whatsapp-float" href="https://wa.me/923076388887" aria-label="WhatsApp Now">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle script
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.getElementById('primaryNav').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
