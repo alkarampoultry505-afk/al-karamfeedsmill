@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AL KARAM KHAIRPUR FEEDS MILL PVT LTD | Premium Quality</title>
 
-    <meta name="description" content="Al Karam Khairpur Feeds Mill Pvt Ltd: Premium Starter, Grower & Finisher feed manufacturer in Sindh. Lab-tested quality for maximum FCR and healthy poultry growth. Contact us for bulk rates.">
+    <meta name="description" content="Al Karam Poultry Feeds Mill Pvt Ltd Khairpur: Premium Starter, Grower & Finisher feed manufacturer in Sindh. Lab-tested quality for maximum FCR and healthy poultry growth. Contact us for bulk rates.">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -41,7 +41,8 @@
             line-height: 1.7; 
             text-align: left;
             direction: ltr;
-            padding-top: 80px; /* Adjusted to fit the sticky header and top bar */
+            /* Default padding for desktop/large screen */
+            padding-top: 80px; 
         }
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Poppins', sans-serif;
@@ -61,7 +62,7 @@
             margin: 0 auto;
         }
 
-        /* Sticky Top Contact Bar */
+        /* Sticky Top Contact Bar - Only for large screens */
         .top-contact-bar {
             background: var(--primary-color);
             color: var(--bg-color);
@@ -147,13 +148,13 @@
         }
 
 
-        /* Header - Modern, slightly transparent */
+        /* Header - Desktop/Large Screen */
         header.site-header {
            
              background: rgba(255, 255, 255, 0.95); 
             backdrop-filter: blur(5px); 
             position: fixed; 
-            top: 40px; 
+            top: 40px; /* Space for top-contact-bar */
             left: 0;
             width: 100%;
             z-index: 999;
@@ -174,7 +175,15 @@
         }
 
         /* Navigation - Sleek */
-        .nav-toggle { display: none; } 
+        .nav-toggle { 
+            display: none; /* Hide toggle button on desktop */
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 5px;
+        } 
         nav.primary-nav {
             display: flex;
             gap: 25px; 
@@ -667,7 +676,7 @@
             margin-bottom: 30px;
             color: var(--primary-color);
         }
-        #contact .director-contacts {
+        .director-contacts {
             display: flex;
             justify-content: center;
             gap: 30px;
@@ -683,7 +692,7 @@
             border-radius: var(--border-radius-sm);
             background-color: #e9ecef;
             flex: 1;
-            min-width: 250px; 
+            min-width: 300px; /* Adjusted min-width for larger cards on desktop */
             transition: all 0.3s ease;
         }
         .director-contact-card:hover {
@@ -855,7 +864,8 @@
         }
 
 
-        /* Responsive Design */
+        /* Responsive Design - MOBILE FIRST FIXES */
+        
         @media(max-width: 992px) {
             h1 { font-size: 3.5rem; }
             h2 { font-size: 2.4rem; }
@@ -867,53 +877,105 @@
         }
 
         @media(max-width: 768px) {
-            body { padding-top: 80px; }
-            .top-contact-bar { font-size: 0.85rem; padding: 6px 0; }
-            header.site-header { top: 35px; } 
+            /* ----- MOBILE APP STYLE CHANGES ----- */
             
-            .header-inner { flex-wrap: wrap; justify-content: space-between; gap: 10px; padding: 10px 15px; }
-            .logo { flex-basis: auto; text-align: left; }
-            .nav-toggle { display: none; } 
-            /* Kept the nav styles just in case you re-enable the toggle */
+            /* Hide top bar on mobile for cleaner look */
+            .top-contact-bar {
+                display: none;
+            }
+
+            /* Adjust body padding to account for hidden top bar and new header height */
+            body { 
+                padding-top: 60px; /* Reduced header height on mobile */
+            }
+
+            /* Fix Header position for mobile app feel */
+            header.site-header { 
+                top: 0; /* Sticky to very top */
+                padding: 5px 0; /* Reduced padding for smaller height */
+            } 
+            .header-inner { 
+                padding: 5px 15px; /* Adjust padding */
+            }
+            .logo img {
+                width: 80px; /* Smaller logo */
+            }
+
+            /* Navigation Toggle for Hamburger Menu */
+            .nav-toggle { 
+                display: block; /* Show toggle button on mobile */
+                z-index: 1000;
+            } 
+            
             nav.primary-nav { 
-                display: flex;
+                /* Mobile Menu: Hidden by default */
+                display: none; 
                 flex-direction: column; 
-                position: absolute; 
-                top: 100%; 
+                position: fixed; 
+                top: 50px; /* Below the header */
                 left: 0; 
                 width: 100%; 
-                background: var(--primary-color); 
+                height: 100%;
+                background: var(--primary-color); /* Dark background for menu */
                 box-shadow: var(--shadow-hover); 
-                padding: 10px 0;
+                padding: 20px 0;
                 border-top: 1px solid rgba(255, 255, 255, 0.1);
+                z-index: 998;
+                overflow-y: auto;
+            }
+            /* Show menu when 'open' class is toggled by JS */
+            nav.primary-nav.open { 
+                display: flex;
+            }
+
+            nav.primary-nav a {
+                color: var(--card-bg); /* White text in menu */
+                padding: 15px 30px; /* Large touch targets */
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                width: 100%;
+            }
+            nav.primary-nav a::after {
+                display: none; /* Remove underline effect in mobile menu */
+            }
+            nav.primary-nav a:hover {
+                background: var(--accent-color); /* Highlight on hover/touch */
+                color: var(--primary-color);
             }
             
+            /* Hero adjustments */
             h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
             #hero { padding: 80px 10px; min-height: 400px; }
             #hero p { font-size: 1.1rem; }
             .cta-bar .btn { font-size: 1rem; padding: 14px 25px; }
 
+            /* Section padding reduction */
             section { padding: 50px 0; }
-            h2 { font-size: 2rem; margin-bottom: 40px; }
             
-            .footer-content { grid-template-columns: 1fr; } /* 1 column on mobile */
-            .footer-logo-col { grid-column: span 1; }
-            .footer-bottom { flex-direction: column; gap: 5px; }
-            .whatsapp-float { width: 55px; height: 55px; font-size: 28px; right: 15px; bottom: 15px; }
-
-            /* Responsive Chart Styling */
+            /* Table optimization for small screens */
             .table-chart thead th, .table-chart tbody td {
                 padding: 10px;
                 font-size: 0.85rem;
             }
-        }
 
-        /* NEW: Sticky Header functionality */
-        .scrolled header.site-header {
-            top: 0;
-        }
-        .scrolled body {
-            padding-top: 120px; /* Adjust padding when scrolled */
+            /* Force Director Cards to full width on mobile */
+            .director-contact-card {
+                min-width: 100%;
+                flex-basis: 100%;
+            }
+
+            .footer-content { grid-template-columns: 1fr; } /* 1 column on mobile */
+            .footer-logo-col { grid-column: span 1; }
+            .footer-bottom { flex-direction: column; gap: 5px; }
+            .whatsapp-float { width: 55px; height: 55px; font-size: 28px; right: 15px; bottom: 15px; }
+            
+            /* Sticky Header functionality update for mobile */
+            .scrolled body {
+                padding-top: 60px; 
+            }
+            .scrolled header.site-header {
+                box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            }
         }
     </style>
 </head>
@@ -929,9 +991,11 @@
         <div class="container header-inner">
             <div class="logo">
                 <a href="#"><img src="https://i.ibb.co/MxqnX8cT/logo-for-al-karam.jpg" alt="AL KARAM Feeds Logo"></a> </div>
-            <button class="nav-toggle" id="navToggle">
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
+            
             <nav class="primary-nav" id="primaryNav">
                 <a href="#about">About</a>
                 <a href="#products">Products</a>
@@ -944,6 +1008,7 @@
                 <a href="#testimonials">Testimonials</a>
                 <a href="#contact">Contact</a>
                 <a href="#location">Location</a>
+                <a href="https://wa.me/923076388887" class="btn btn-whatsapp" style="margin: 20px 30px;"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
             </nav>
         </div>
     </header>
@@ -1499,30 +1564,52 @@
         // Sticky Header functionality
         window.onscroll = function() {
             var header = document.getElementById("siteHeader");
-            var topBarHeight = document.querySelector('.top-contact-bar').offsetHeight;
+            var topBar = document.querySelector('.top-contact-bar');
             
-            if (window.pageYOffset > topBarHeight) {
+            // Check if topBar is visible (i.e., not on mobile)
+            var topBarHeight = topBar && window.getComputedStyle(topBar).display !== 'none' ? topBar.offsetHeight : 0;
+            
+            if (window.pageYOffset > 5) { /* A small threshold for sticky effect */
                 document.body.classList.add("scrolled");
             } else {
                 document.body.classList.remove("scrolled");
             }
+
+            // Adjust header top position if top bar is present (Desktop behavior)
+            if (window.innerWidth > 768) {
+                if (window.pageYOffset > topBarHeight) {
+                    header.style.top = '0';
+                } else {
+                    header.style.top = topBarHeight + 'px';
+                }
+            } else {
+                 header.style.top = '0'; /* Always stick to top on mobile */
+            }
         };
+
 
         // Mobile Menu Toggle
         document.getElementById('navToggle').addEventListener('click', function() {
-            document.getElementById('primaryNav').classList.toggle('open');
+            var nav = document.getElementById('primaryNav');
+            nav.classList.toggle('open');
             this.querySelector('i').classList.toggle('fa-bars');
             this.querySelector('i').classList.toggle('fa-xmark'); // Change icon to X
+            
+            // Optional: Prevent background scrolling when menu is open
+            document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : 'auto';
         });
         
         // Close mobile menu on link click
         document.querySelectorAll('.primary-nav a').forEach(link => {
             link.addEventListener('click', function() {
                 var nav = document.getElementById('primaryNav');
+                var toggle = document.getElementById('navToggle');
+                
                 if (nav.classList.contains('open')) {
                     nav.classList.remove('open');
-                    document.getElementById('navToggle').querySelector('i').classList.add('fa-bars');
-                    document.getElementById('navToggle').querySelector('i').classList.remove('fa-xmark');
+                    toggle.querySelector('i').classList.add('fa-bars');
+                    toggle.querySelector('i').classList.remove('fa-xmark');
+                    document.body.style.overflow = 'auto'; // Restore scrolling
                 }
             });
         });
@@ -1530,4 +1617,3 @@
     
 </body>
 </html>
-
