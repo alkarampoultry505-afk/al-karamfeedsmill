@@ -383,6 +383,111 @@
             padding: 0 15px;
         }
 
+        /* NEW CHART & GUIDE STYLES */
+        .chart-section {
+            padding: var(--padding-section);
+            background: var(--card-bg); /* Use card-bg for clean white background */
+        }
+        .chart-section h3 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .chart-section h3::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        .table-chart {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0 40px 0;
+            font-size: 1rem;
+            text-align: left;
+            box-shadow: var(--shadow-light);
+            border-radius: var(--border-radius-sm);
+            overflow: hidden; /* Important for border-radius on table */
+        }
+        .table-chart th, .table-chart td {
+            padding: 15px 20px;
+            border: 1px solid #dee2e6;
+            transition: background-color 0.2s ease;
+        }
+        .table-chart thead th {
+            background-color: var(--primary-color); /* Dark Green Header */
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        .table-chart tbody tr:nth-child(even) {
+            background-color: var(--bg-color); /* Light background for stripe effect */
+        }
+        .table-chart tbody tr:hover {
+            background-color: #e9e9e9;
+        }
+        .table-chart tbody td:first-child {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+        .chart-notes {
+            background: #fff8e1; /* Light Goldish background for notes */
+            border: 1px solid var(--secondary-color);
+            padding: 20px;
+            border-radius: var(--border-radius-sm);
+            margin-top: 20px;
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+        .chart-notes strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 10px;
+        }
+        .chart-notes ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+        .chart-notes li {
+            margin-bottom: 5px;
+        }
+
+        /* Biosecurity List Styling */
+        .biosecurity-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .biosecurity-list li {
+            background: var(--card-bg); /* Changed to card-bg for visibility */
+            padding: 20px;
+            border-left: 5px solid var(--secondary-color);
+            border-radius: var(--border-radius-sm);
+            box-shadow: var(--shadow-light);
+            font-weight: 500;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        .biosecurity-list li:hover {
+            transform: translateY(-5px);
+        }
+        .biosecurity-list li i {
+            color: var(--accent-color);
+            margin-right: 10px;
+        }
+
+
         /* Why Choose Us Section Styles */
         #why-us {
             background: var(--card-bg);
@@ -567,7 +672,7 @@
             justify-content: center;
             gap: 30px;
             flex-wrap: wrap;
-            max-width: 700px;
+            max-width: 1000px;
             margin: 0 auto 50px;
         }
         .director-contact-card {
@@ -578,7 +683,7 @@
             border-radius: var(--border-radius-sm);
             background-color: #e9ecef;
             flex: 1;
-            min-width: 280px;
+            min-width: 250px; 
             transition: all 0.3s ease;
         }
         .director-contact-card:hover {
@@ -768,9 +873,10 @@
             
             .header-inner { flex-wrap: wrap; justify-content: space-between; gap: 10px; padding: 10px 15px; }
             .logo { flex-basis: auto; text-align: left; }
-            .nav-toggle { display: block; background: none; border: none; font-size: 1.5rem; color: var(--primary-color); cursor: pointer; }
+            .nav-toggle { display: none; } 
+            /* Kept the nav styles just in case you re-enable the toggle */
             nav.primary-nav { 
-                display: none;
+                display: flex;
                 flex-direction: column; 
                 position: absolute; 
                 top: 100%; 
@@ -781,15 +887,6 @@
                 padding: 10px 0;
                 border-top: 1px solid rgba(255, 255, 255, 0.1);
             }
-            nav.primary-nav.open { display: flex; }
-            nav.primary-nav a { 
-                color: var(--card-bg);
-                padding: 12px 25px; 
-                border-left: 4px solid var(--secondary-color); 
-                margin: 0 15px; 
-                font-weight: 500;
-            }
-            nav.primary-nav a::after { display: none; } /* Hide underline on mobile menu */
             
             h1 { font-size: 2.5rem; }
             #hero { padding: 80px 10px; min-height: 400px; }
@@ -803,6 +900,12 @@
             .footer-logo-col { grid-column: span 1; }
             .footer-bottom { flex-direction: column; gap: 5px; }
             .whatsapp-float { width: 55px; height: 55px; font-size: 28px; right: 15px; bottom: 15px; }
+
+            /* Responsive Chart Styling */
+            .table-chart thead th, .table-chart tbody td {
+                padding: 10px;
+                font-size: 0.85rem;
+            }
         }
 
         /* NEW: Sticky Header functionality */
@@ -825,14 +928,17 @@
     <header class="site-header" id="siteHeader">
         <div class="container header-inner">
             <div class="logo">
-                <a href="#"><img src="https://i.ibb.co/L5Gq84k/AL-KARAM-FEEDS-LOGO-PNG.png" alt="AL KARAM Feeds Logo"></a>
-            </div>
+                <a href="#"><img src="https://i.ibb.co/MxqnX8cT/logo-for-al-karam.jpg" alt="AL KARAM Feeds Logo"></a> </div>
             <button class="nav-toggle" id="navToggle">
                 <i class="fa-solid fa-bars"></i>
             </button>
             <nav class="primary-nav" id="primaryNav">
                 <a href="#about">About</a>
                 <a href="#products">Products</a>
+                <a href="#feed-chart">Feed Chart</a>
+                <a href="#water-chart">Water Chart</a>
+                <a href="#medicine-schedule">Medicine Schedule</a>
+                <a href="#biosecurity">Biosecurity</a>
                 <a href="#why-us">Why Us</a>
                 <a href="#gallery">Gallery</a>
                 <a href="#testimonials">Testimonials</a>
@@ -844,9 +950,9 @@
 
     <section id="hero">
         <div class="container hero-content">
-            <h1>Welcome to Al Karam Khairpur Feeds</h1>
+            <h1>Welcome to Al-Karam Broiler Farm</h1>
             <p>Premium Quality Poultry Feeds for Maximum Farm Profitability.</p>
-            <p class="lead">"Feed That Grows Your Farm"</p>
+            <p class="lead">“Healthy Birds, Healthy Growth”</p>
             <div class="cta-bar">
                 <a class="btn btn-whatsapp" href="https://wa.me/923076388887?text=Hello%2C%20I%20am%20interested%20in%20Al%20Karam%20Feeds.%20Please%20share%20the%20current%20price%20list%20for%20bulk%20orders."><i class="fa-brands fa-whatsapp"></i> GET LATEST PRICE LIST ON WHATSAPP</a>
             </div>
@@ -930,6 +1036,182 @@
         </div>
     </section>
 
+    <section id="feed-chart" class="chart-section">
+        <div class="container">
+            <h2><i class="fa-solid fa-calculator"></i> Broiler Feed Chart</h2>
+
+            <h3>Starter Feed (0–14 Days)</h3>
+            <table class="table-chart">
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Standard %</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Crude Protein</td><td>21–23%</td><td>Muscle Growth</td></tr>
+                    <tr><td>Metabolizable Energy</td><td>2900–3000 kcal/kg</td><td>Energy</td></tr>
+                    <tr><td>Crude Fat</td><td>4–6%</td><td>Growth Support</td></tr>
+                    <tr><td>Crude Fiber</td><td>3–5%</td><td>Easy Digestion</td></tr>
+                    <tr><td>Lysine</td><td>1.2–1.4%</td><td>Muscle Building</td></tr>
+                    <tr><td>Methionine</td><td>0.50–0.55%</td><td>Feathers & Immunity</td></tr>
+                    <tr><td>Calcium</td><td>0.90–1.00%</td><td>Bone Strength</td></tr>
+                    <tr><td>Phosphorus</td><td>0.45–0.50%</td><td>Skeleton Development</td></tr>
+                    <tr><td>Salt</td><td>0.30–0.40%</td><td>Electrolyte Balance</td></tr>
+                    <tr><td>Moisture</td><td>10–12%</td><td>Keep Feed Fresh</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Grower Feed (15–28 Days)</h3>
+            <table class="table-chart">
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Standard %</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Crude Protein</td><td>19–21%</td><td>Muscle Development</td></tr>
+                    <tr><td>Metabolizable Energy</td><td>3000–3100 kcal/kg</td><td>Higher Energy Needs</td></tr>
+                    <tr><td>Crude Fat</td><td>5–7%</td><td>Fat & Weight Gain</td></tr>
+                    <tr><td>Crude Fiber</td><td>4–6%</td><td>Digestive Health</td></tr>
+                    <tr><td>Lysine</td><td>1.0–1.1%</td><td></td></tr>
+                    <tr><td>Methionine</td><td>0.45–0.50%</td><td></td></tr>
+                    <tr><td>Calcium</td><td>0.85–0.95%</td><td></td></tr>
+                    <tr><td>Phosphorus</td><td>0.40–0.45%</td><td></td></tr>
+                    <tr><td>Salt</td><td>0.30–0.40%</td><td></td></tr>
+                </tbody>
+            </table>
+
+            <h3>Finisher Feed (29–42 Days)</h3>
+            <table class="table-chart">
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Standard %</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Crude Protein</td><td>17–19%</td><td>Final Weight Gain</td></tr>
+                    <tr><td>Metabolizable Energy</td><td>3100–3200 kcal/kg</td><td>Maximum Energy Density</td></tr>
+                    <tr><td>Crude Fat</td><td>6–8%</td><td>Fat Deposit & Meat Quality</td></tr>
+                    <tr><td>Crude Fiber</td><td>4–6%</td><td></td></tr>
+                    <tr><td>Lysine</td><td>0.85–0.95%</td><td></td></tr>
+                    <tr><td>Methionine</td><td>0.35–0.45%</td><td></td></tr>
+                    <tr><td>Calcium</td><td>0.80–0.90%</td><td></td></tr>
+                    <tr><td>Phosphorus</td><td>0.35–0.40%</td><td></td></tr>
+                    <tr><td>Salt</td><td>0.25–0.35%</td><td></td></tr>
+                </tbody>
+            </table>
+            
+            <h3>Daily Feed Consumption (g per bird/day)</h3>
+            <table class="table-chart" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+                <thead>
+                    <tr>
+                        <th>Age (Days)</th>
+                        <th>Feed (g)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1–7</td><td>13–20</td></tr>
+                    <tr><td>8–14</td><td>25–40</td></tr>
+                    <tr><td>15–21</td><td>60–85</td></tr>
+                    <tr><td>22–28</td><td>95–120</td></tr>
+                    <tr><td>29–35</td><td>130–160</td></tr>
+                    <tr><td>36–42</td><td>160–180</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="water-chart" class="chart-section" style="background: var(--bg-color);">
+        <div class="container">
+            <h2><i class="fa-solid fa-droplet"></i> Broiler Water Chart</h2>
+
+            <h3>Daily Water Intake per Bird (ml/day)</h3>
+            <table class="table-chart" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+                <thead>
+                    <tr>
+                        <th>Age (Days)</th>
+                        <th>Water (ml)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1–3</td><td>15–20</td></tr>
+                    <tr><td>4–7</td><td>30–50</td></tr>
+                    <tr><td>8–14</td><td>80–120</td></tr>
+                    <tr><td>15–21</td><td>150–220</td></tr>
+                    <tr><td>22–28</td><td>250–300</td></tr>
+                    <tr><td>29–35</td><td>320–380</td></tr>
+                    <tr><td>36–42</td><td>400–500</td></tr>
+                </tbody>
+            </table>
+            
+            <div class="chart-notes">
+                <strong>Important Notes:</strong>
+                <ul>
+                    <li>**Rule of Thumb:** Feed Consumption × 2 = Water Intake.</li>
+                    <li>**Optimal Water Temperature:** 15–20°C (Essential for health and intake).</li>
+                    <li>**Water Quality:** Keep water clean, maintain pH 6.5–7.5, and disinfect weekly.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="medicine-schedule" class="chart-section">
+        <div class="container">
+            <h2><i class="fa-solid fa-syringe"></i> Medicine & Supplement Schedule</h2>
+
+            <table class="table-chart">
+                <thead>
+                    <tr>
+                        <th>Day Range</th>
+                        <th>Medicine / Supplement</th>
+                        <th>Dose Example</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1–3</td><td>Glucose + Vitamin C</td><td>50g/100 birds</td><td>Energy + Stress Management</td></tr>
+                    <tr><td>1–3</td><td>ORS</td><td>1g/L</td><td>Hydration and Electrolyte Balance</td></tr>
+                    <tr><td>4–7</td><td>Tylosin / Doxycycline</td><td>1g/L</td><td>Respiratory Infection Protection</td></tr>
+                    <tr><td>4–7</td><td>B-Complex</td><td>1ml/L</td><td>Appetite Stimulation & Growth</td></tr>
+                    <tr><td>8–10</td><td>Amprolium 20%</td><td>1g/L</td><td>Coccidiosis Prevention (First Round)</td></tr>
+                    <tr><td>11–14</td><td>Mineral + Calcium</td><td>1ml/L</td><td>Bone Strength & Development</td></tr>
+                    <tr><td>15–18</td><td>Doxycycline + Tylosin</td><td>1g/L</td><td>Respiratory Protection (Repeat)</td></tr>
+                    <tr><td>19–21</td><td>Amprolium 20%</td><td>1g/L</td><td>Coccidial Control (Second Round)</td></tr>
+                    <tr><td>22–28</td><td>Liver Tonic</td><td>1ml/L</td><td>Digestion & Feed Conversion Rate (FCR) Improvement</td></tr>
+                    <tr><td>29–35</td><td>Vitamin ADEK + B-Complex</td><td>1ml/L</td><td>Maximized Weight Gain</td></tr>
+                    <tr><td>36–42</td><td>Liver Booster + Vitamin C</td><td>1ml/L</td><td>Market Age Health & Stress Relief</td></tr>
+                </tbody>
+            </table>
+            
+            <div class="chart-notes">
+                <strong>Important Note:</strong>
+                <p>No antibiotics should be administered **5–7 days before** the market age (Slaughter/Sale) to comply with withdrawal periods.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="biosecurity" class="chart-section" style="background: var(--bg-color);">
+        <div class="container">
+            <h2><i class="fa-solid fa-shield-halved"></i> Biosecurity Guidelines</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">Maintaining strict biosecurity measures is essential to prevent disease outbreaks and ensure the profitability of your farm.</p>
+            
+            <ul class="biosecurity-list">
+                <li><i class="fa-solid fa-person-walking-arrow-right"></i> **Restricted Entry:** Implement a controlled entrance system (Foot Bath, Vehicle Disinfection, Visitor Logbook).</li>
+                <li><i class="fa-solid fa-broom"></i> **Cleaning & Disinfection:** Perform a complete clean-out and disinfection weekly, especially of equipment and sheds.</li>
+                <li><i class="fa-solid fa-bug-slash"></i> **Rodent & Pest Control:** Use traps, baits, and sprays regularly to control rodents, flies, and other vectors.</li>
+                <li><i class="fa-solid fa-hand-sparkles"></i> **Staff Hygiene:** Mandate uniform use, thorough handwashing, and prevent sick staff from entering the farm.</li>
+                <li><i class="fa-solid fa-truck-medical"></i> **Sick Bird Management:** Immediately quarantine any bird showing signs of illness and initiate proper diagnostic and treatment protocols.</li>
+                <li><i class="fa-solid fa-file-invoice"></i> **Record Keeping:** Maintain detailed records of feed consumption, water intake, medicine usage, and daily mortality.</li>
+            </ul>
+        </div>
+    </section>
+
     <section id="why-us">
         <div class="container">
             <h2><i class="fa-solid fa-handshake-angle"></i> Why Trust Al Karam Feeds?</h2>
@@ -963,7 +1245,31 @@
                 <div class="gallery-item">
                     <img src="https://i.ibb.co/N64tp6zf/Gemini-Generated-Image-nzjrwnzjrwnzjrwn.png" alt="Feed Production Machinery">
                 </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/Cpmvpzcx/Whats-App-Image-2025-11-28-at-5-45-34-PM.jpg" alt="Al-Karam Gallery Image">
                 </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/kVxzkk3x/Whats-App-Image-2025-11-28-at-5-45-33-PM-2.jpg" alt="Al-Karam Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/V0hDR6jW/Whats-App-Image-2025-11-28-at-5-45-33-PM-1.jpg" alt="Al-Karam Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/j9vnb8xk/Whats-App-Image-2025-11-28-at-5-45-33-PM.jpg" alt="Al-Karam Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/JwhRCW1x/Whats-App-Image-2025-11-28-at-5-45-32-PM-2.jpg" alt="Al-Karam Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/cS5P24tT/Whats-App-Image-2025-11-28-at-5-45-32-PM-1.jpg" alt="Al-Karam Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/JF3s6DmN/Whats-App-Image-2025-11-28-at-5-45-32-PM.jpg" alt="Al-Karam Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/mjmZF3W/Whats-App-Image-2025-11-28-at-5-45-31-PM.jpg" alt="Al-Karam Gallery Image">
+                </div>
+            </div>
         </div>
     </section>
     
@@ -1104,11 +1410,28 @@
                         <div class="value"><a href="tel:+923013919194">0301-3919194</a></div>
                     </div>
                 </div>
+                
                 <div class="director-contact-card">
                     <div class="icon"><i class="fa-solid fa-user-tie"></i></div>
                     <div>
                         <div class="label">Director: Mr. Arshad Jatoi</div>
                         <div class="value"><a href="tel:+923076388887">0307-6388887</a></div>
+                    </div>
+                </div>
+
+                <div class="director-contact-card">
+                    <div class="icon"><i class="fa-solid fa-user-tie"></i></div>
+                    <div>
+                        <div class="label">Director: Mr. Shahid Ikram Malik</div>
+                        <div class="value"><a href="tel:+923008377120">0300-8377120</a></div>
+                    </div>
+                </div>
+
+                <div class="director-contact-card">
+                    <div class="icon"><i class="fa-solid fa-user-tie"></i></div>
+                    <div>
+                        <div class="label">Director: Mr. Abdul Hafeez Brohi</div>
+                        <div class="value"><a href="tel:+923003254547">0300-3254547</a></div>
                     </div>
                 </div>
             </div>
@@ -1127,8 +1450,7 @@
             <div class="footer-content">
                 
                 <div class="footer-col footer-logo-col">
-                    <a href="#"><img src="https://i.ibb.co/L5Gq84k/AL-KARAM-FEEDS-LOGO-PNG.png" alt="AL KARAM Feeds Logo" style="width:100px;"></a>
-                    <p>Al Karam Poultry Feeds Mill Khairpur is a leading manufacturer of premium, scientifically formulated poultry feed, committed to providing Sindh's farmers with the best quality for maximum profitability.</p>
+                    <a href="#"><img src="https://i.ibb.co/MxqnX8cT/logo-for-al-karam.jpg" alt="AL KARAM Feeds Logo" style="width:100px;"></a> <p>Al Karam Poultry Feeds Mill Khairpur is a leading manufacturer of premium, scientifically formulated poultry feed, committed to providing Sindh's farmers with the best quality for maximum profitability.</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/alkaram.feeds.mill" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="https://wa.me/923076388887" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
@@ -1140,8 +1462,10 @@
                     <ul class="footer-links">
                         <li><a href="#about"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
                         <li><a href="#products"><i class="fa-solid fa-angle-right"></i> Our Products</a></li>
-                        <li><a href="#why-us"><i class="fa-solid fa-angle-right"></i> Why Choose Us</a></li>
-                        <li><a href="#gallery"><i class="fa-solid fa-angle-right"></i> Gallery</a></li>
+                        <li><a href="#feed-chart"><i class="fa-solid fa-angle-right"></i> Feed Chart</a></li>
+                        <li><a href="#water-chart"><i class="fa-solid fa-angle-right"></i> Water Chart</a></li>
+                        <li><a href="#medicine-schedule"><i class="fa-solid fa-angle-right"></i> Medicine Schedule</a></li>
+                        <li><a href="#biosecurity"><i class="fa-solid fa-angle-right"></i> Biosecurity</a></li>
                     </ul>
                 </div>
                 
@@ -1178,9 +1502,13 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                // Ensure target exists before scrolling
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
 
